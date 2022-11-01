@@ -1,6 +1,9 @@
 <template>
   <header>
-    <ParallaxHome/>
+    <Parallax
+        :src="require('@/assets/header-background.png')"
+        height="100"
+    ></Parallax>
   </header>
     <!-- fotos montando na tela-->
     <!--Carousel-->
@@ -8,26 +11,10 @@
 </template>
 
 <script>
-import ParallaxHome from "@/components/Parallax/ParallaxHome";
+import Parallax from "@/components/Parallax/Parallax";
 
   export default {
     name: 'Home',
-    components: { ParallaxHome },
+    components: { Parallax },
   }
 </script>
-
-<style>
-*
-{
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
-}
-
-html, body, #root
-{
-  background-color: white;
-  min-height: 100vh;
-}
-</style>
