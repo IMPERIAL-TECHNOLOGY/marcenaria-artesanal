@@ -2,7 +2,7 @@
   <header>
     <Parallax
         :src="require('@/assets/header-background.png')"
-        height="100"
+        height="100vh"
     ></Parallax>
   </header>
     <!-- fotos montando na tela-->
