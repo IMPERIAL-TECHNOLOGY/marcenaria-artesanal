@@ -1,7 +1,7 @@
 <template>
   <header>
     <Parallax
-        :src="require('@/assets/header-background.png')"
+        :src="require('@/assets/images/header-background.png')"
         height="100vh"
     ></Parallax>
   </header>
