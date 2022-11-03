@@ -1,7 +1,8 @@
 <template>
-  <header>
+  <v-header>
     <base-image
         :src="require('@/assets/images/header-background.png')"
+        alt="living room decorated with handmade furniture"
         height="100vh"
         class="relativeImage"
     >
@@ -10,16 +11,16 @@
         :tabs="tabs"
         class="tabStyle"
     />
-    <base-image
-        :src="require('@/assets/images/header-background.png')"
-        height="100vh"
-        class="relativeImage"
-    >
-    </base-image>
-  </header>
-    <!-- fotos montando na tela-->
-    <!--Carousel-->
-    <!--Footer-->
+    <main>
+      <base-image
+          :src="require('@/assets/images/header-background.png')"
+          alt="living room decorated with handmade furniture"
+          height="100vh"
+          class="relativeImage"
+      >
+      </base-image>
+    </main>
+  </v-header>
 </template>
 
 <script>
@@ -34,7 +35,7 @@ import TabsNavegation from "@/components/Tabs/TabsNavegation";
     data() {
       return{
         tabs: [
-          {name: 'NOSSA HISTÓRIA'},
+          {name: 'HISTÓRIA'},
           {name: 'PROJETOS'},
           {name: 'CONTATO'}
         ]

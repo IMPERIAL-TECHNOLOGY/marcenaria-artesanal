@@ -8,7 +8,7 @@
       <div class="header" v-for="(tab, i) in tabs" :key="i">
         <v-tab
             v-bind="$props"
-            style="color: white; font-size: large"
+            style="color: white; font-size: 1em"
             right
         >
           {{ tab.name }}
