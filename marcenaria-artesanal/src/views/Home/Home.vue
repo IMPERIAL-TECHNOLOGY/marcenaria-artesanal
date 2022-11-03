@@ -45,7 +45,7 @@ import TabsNavegation from "@/components/Tabs/TabsNavegation";
 <style>
 .tabStyle {
   position: absolute;
-  top: 70px;
+  top: 77px;
   right: 30px;
 }
 </style>
