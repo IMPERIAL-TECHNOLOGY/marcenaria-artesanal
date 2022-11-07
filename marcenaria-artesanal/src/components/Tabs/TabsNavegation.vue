@@ -9,7 +9,7 @@
         <v-tab
             v-bind="$props"
             v-on="$listeners"
-            style="color: white; font-size: 1em"
+            style="color: white; font-size: 1.1em"
             right
             link
             :to="{hash: tab.anchor}"
