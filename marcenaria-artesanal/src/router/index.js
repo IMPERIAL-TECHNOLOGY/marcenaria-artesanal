@@ -7,7 +7,7 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
-    name: 'homer',
+    name: 'home',
     component: Home
   }
 ]
@@ -15,7 +15,18 @@ const routes = [
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
-  routes
+  routes,
+  scrollBehavior(to,from, savedPosition) {
+    console.log(1111111,savedPosition);
+    if(to.hash) {
+      return {
+        selector: to.hash,
+        behavior:'smooth'
+      }
+    }
+
+    return {x:0, y:0}
+  }
 })
 
 export default router

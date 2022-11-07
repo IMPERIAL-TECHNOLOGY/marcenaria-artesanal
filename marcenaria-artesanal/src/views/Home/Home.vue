@@ -1,49 +1,60 @@
 <template>
-  <v-header>
-    <base-image
-        :src="require('@/assets/images/header-background.png')"
-        alt="living room decorated with handmade furniture"
-        height="100vh"
-        class="relativeImage"
-    >
-    </base-image>
-    <TabsNavegation
-        :tabs="tabs"
-        class="tabStyle"
-    />
-    <main>
+  <div>
+    <header>
       <base-image
           :src="require('@/assets/images/header-background.png')"
           alt="living room decorated with handmade furniture"
           height="100vh"
-          class="relativeImage"
-      >
-      </base-image>
-    </main>
-  </v-header>
+      />
+      <TabsNavegation
+          :tabs="tabs"
+          class="tabStyle"
+      />
+    </header>
+    <v-main>
+      <div id="history">
+        <base-image
+            :src="require('@/assets/images/ex.jpeg')"
+            alt="room decorated with handmade furniture"
+            height="100vh"
+        />
+      </div>
+    </v-main>
+  </div>
 </template>
 
 <script>
 import BaseImage from "@/components/Image/BaseImage";
 import TabsNavegation from "@/components/Tabs/TabsNavegation";
+import Parallax from "@/components/Parallax/Parallax";
   export default {
     name: 'Home',
     components: {
+      Parallax,
       BaseImage,
       TabsNavegation
     },
     data() {
       return{
         tabs: [
-          {name: 'HISTÓRIA'},
-          {name: 'PROJETOS'},
-          {name: 'CONTATO'}
+          {
+            name: 'HISTÓRIA',
+            anchor: '#history',
+          },
+          {
+            name: 'PROJETOS',
+            anchor: '#section2',
+          },
+          {
+            name: 'CONTATO',
+            anchor: '#section3',
+          }
         ]
       }
     }
   }
 </script>
-<style>
+<style scoped>
 .tabStyle {
   position: absolute;
   top: 77px;

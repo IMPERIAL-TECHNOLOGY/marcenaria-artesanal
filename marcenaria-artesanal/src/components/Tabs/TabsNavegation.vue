@@ -8,8 +8,12 @@
       <div class="header" v-for="(tab, i) in tabs" :key="i">
         <v-tab
             v-bind="$props"
+            v-on="$listeners"
             style="color: white; font-size: 1em"
             right
+            link
+            :to="{hash: tab.anchor}"
+            @click="$emit('scrollMeTo')"
         >
           {{ tab.name }}
         </v-tab>
@@ -23,6 +27,13 @@ export default {
   props: {
     tabs: Array
   },
+  methods: {
+    scrollMeTo(refName) {
+      let element = this.$refs[refName];
+      console.log('IUUUUUUUUUUUUU', element)
+      element.scrollIntoView({behavior: "smooth"});
+    }
+  }
 }
 </script>
 <style scoped>
