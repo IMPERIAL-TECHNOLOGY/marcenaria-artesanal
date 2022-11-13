@@ -1,4 +1,4 @@
-# default
+# MARCENARIA ARTESANAL
 
 ## Project setup
 
