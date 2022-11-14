@@ -12,7 +12,6 @@
             style="color: white; font-size: 1.1em"
             right
             :to="{name: tab.path, hash: tab.anchor}"
-            @click="$emit('scrollMeTo')"
         >
           {{ tab.name }}
         </v-tab>
@@ -26,13 +25,6 @@ export default {
   props: {
     tabs: Array
   },
-  methods: {
-    scrollMeTo(refName) {
-      let element = this.$refs[refName];
-      console.log('IUUUUUUUUUUUUU', element)
-      element.scrollIntoView({behavior: "smooth"});
-    }
-  }
 }
 </script>
 <style scoped>
