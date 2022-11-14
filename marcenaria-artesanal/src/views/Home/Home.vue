@@ -22,17 +22,43 @@
             <div CLASS="separator"/>
           </div>
           <div class="portfolioTabs">
-            <v-card
+
+              <v-card
               v-for="(item, i) in portifolioTabs" :key="i"
               variant="accordion"
-              class="portfolioItem"
-            >
-              <v-card-title>
-                {{item.title}}
-              </v-card-title>
-                <v-card-text>
-                  {{item.text}}
-                </v-card-text>>
+              >
+                <v-hover v-slot="{ isHovering, props }">
+                <v-card-item
+                  class="portfolioItem"
+                  v-bind="props"
+                >
+                  <v-card-title>
+                    {{ item.title }}
+                  </v-card-title>
+                  <v-expand-transition
+                  >
+                    <div class="d-flex transition-fast-in-low-out v-card--reveal text-h2"
+                         v-if="isHovering">
+                      <v-card-item
+                        class="portfolioItemExpanded "
+                      >
+                        <v-card-title>
+                          {{ item.title }}
+                        </v-card-title>
+                        <v-card-text>
+                          {{ item.text }}
+                        </v-card-text>
+                        <v-btn
+                          class="cardButton"
+                          :to="{name: item.path, hash: item.anchor}"
+                        >
+                          contato
+                        </v-btn>
+                      </v-card-item>
+                    </div>
+                  </v-expand-transition>
+                </v-card-item>
+                </v-hover>
             </v-card>
           </div>
         </div>
@@ -87,39 +113,57 @@ import Parallax from "@/components/Parallax/Parallax";
         ],
         portifolioTabs: [
           {
+            name: "cardSala",
             title: "SALA",
             text: "diuuahsduhasdhosadsdasdasdasdsadsada sdsadsadsaddsdsad" +
               "sadasddssdadsdasdsadsadsadasdsadsadsadsaddsdsadsadsadssd" +
               "asdasdsadsaddssdsd",
-            anchor: "1"
+            anchor: "#contact",
+            card: false
           },
           {
+            name: "cardQuarto",
             title: "QUARTO",
             text: "diuuahsduhasdhosadsdasdasdasdsadsada sdsadsadsaddsdsad" +
               "sadasddssdadsdasdsadsadsadasdsadsadsadsaddsdsadsadsadssd" +
               "asdasdsadsaddssdsd",
-            anchor: "2"
+            anchor: "#contact",
+            card: false
           },
           {
+            name: "cardCozinha",
             title: "COZINHA",
             text: "diuuahsduhasdhosadsdasdasdasdsadsada sdsadsadsaddsdsad" +
               "sadasddssdadsdasdsadsadsadasdsadsadsadsaddsdsadsadsadssd" +
               "asdasdsadsaddssdsd",
-            anchor: "3"
+            anchor: "#contact",
+            card: false
           },
           {
+            name: "cardEscritório",
             title: "ESCRITÓRIO",
             text: "diuuahsduhasdhosadsdasdasdasdsadsada sdsadsadsaddsdsad" +
               "sadasddssdadsdasdsadsadsadasdsadsadsadsaddsdsadsadsadssd" +
               "asdasdsadsaddssdsd",
-            anchor: "4"
+            anchor: "#contact",
+            card: false,
           }
         ],
-        cardSala: false,
-        cardQuarto: false,
-        cardCozinha: false,
-        cardEscritório: false,
         logo: `${new URL('../../assets/images/logo.png', import.meta.url)}`,
+      }
+    },
+    methods: {
+      cardExpanded(name) {
+        const card = name
+        if (card === "cardSala") {
+          return this.portifolioTabs[0].card = !this.portifolioTabs[0].card
+        } else if (card === "cardQuarto") {
+          return this.portifolioTabs[1].card = !this.portifolioTabs[1].card
+        } else if (card === "cardCozinha") {
+          return this.portifolioTabs[2].card = !this.portifolioTabs[2].card
+        } else {
+          return this.portifolioTabs[3].card = !this.portifolioTabs[3].card
+        }
       }
     }
   }
@@ -154,7 +198,7 @@ import Parallax from "@/components/Parallax/Parallax";
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-between;
-  height: 30vh;
+  height: 43vh;
 }
 .titleContent {
   display: flex;
@@ -172,7 +216,7 @@ import Parallax from "@/components/Parallax/Parallax";
   text-wrap: none;
 }
 .separator {
-  border-bottom: 1.5px groove white;
+  border-bottom: 2px groove white;
   box-sizing:border-box;
   margin-bottom: 17px;
   margin-right: 21px;
@@ -189,8 +233,8 @@ import Parallax from "@/components/Parallax/Parallax";
   margin: 0;
   padding: 0;
   height: 100vh;
-  width: 600px;
-  background-color: yellow;
+  width: 100vw;
+  background-color: black;
 }
 .contactContainer {
   margin: 0;
@@ -201,13 +245,40 @@ import Parallax from "@/components/Parallax/Parallax";
 }
 .portfolioTabs {
   color: white;
-  height: 200px;
+  height: 45vh;
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
 }
+ .portfolioItemExpanded {
+   width: 200px;
+   height: 40vh;
+   margin-right: 20px;
+   background-color: #341818;
+   cursor: pointer;
+}
  .portfolioItem {
-  width: 200px;
-   background-color: gray;
+   width: 200px;
+   margin-bottom: 0;
+   margin-top: 20vh;
+   margin-right: 20px;
+   cursor: pointer;
+ }
+.v-card--reveal {
+  height: 40vh;
+  align-items: center;
+  bottom: 0;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+}
+.cardButton {
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  border: 0.5px white;
+  background-color: #341818;
+  color: white;
 }
 </style>
