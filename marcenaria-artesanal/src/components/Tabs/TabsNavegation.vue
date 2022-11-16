@@ -4,6 +4,7 @@
         background-color="transparent"
         color="white"
         height="30"
+        hide-slider
     >
       <div class="header" v-for="(tab, i) in tabs" :key="i">
         <v-tab
@@ -11,7 +12,6 @@
             v-on="$listeners"
             style="color: white; font-size: 1.1em"
             right
-            link
             :to="{hash: tab.anchor}"
             @click="$emit('scrollMeTo')"
         >

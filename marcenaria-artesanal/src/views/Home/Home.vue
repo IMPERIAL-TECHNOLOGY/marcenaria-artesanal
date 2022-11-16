@@ -1,17 +1,29 @@
 <template>
   <div>
-    <header>
-      <base-image
-          :src="require('@/assets/images/header-background.png')"
-          alt="living room decorated with handmade furniture"
+    <div>
+      <header class="headerContainer">
+        <nav class="navContainer">
+          <base-image
+              :src="require('@/assets/images/logo.png')"
+              alt="Marcenaria artesanal logo"
+              class="logo"
+              max-width="15em"
+              max-height="4em"
+          />
+          <TabsNavegation
+              :tabs="tabs"
+              class="tabStyle"
+          />
+        </nav>
+        <div><p>MARCENARIA <span>ARTESANAL</span></p></div>
+      </header>
+    </div>
+    <v-main>
+      <parallax
+          :src="require('@/assets/images/test-parallax.png')"
+          alt="room decorated with handmade furniture"
           height="100vh"
       />
-      <TabsNavegation
-          :tabs="tabs"
-          class="tabStyle"
-      />
-    </header>
-    <v-main>
       <div id="history">
         <base-image
             :src="require('@/assets/images/ex.jpeg')"
@@ -55,9 +67,24 @@ import Parallax from "@/components/Parallax/Parallax";
   }
 </script>
 <style scoped>
+.headerContainer {
+  height: 100vh;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-image: url('../../assets/images/header-background.png');
+}
+.navContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
 .tabStyle {
-  position: absolute;
-  top: 77px;
-  right: 30px;
+  margin-right: 100px;
+  margin-top: 80px;
+}
+.logo{
+  margin-left: 100px;
+  margin-top: 80px;
 }
 </style>
