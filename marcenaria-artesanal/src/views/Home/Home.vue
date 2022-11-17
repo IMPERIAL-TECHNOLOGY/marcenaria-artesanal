@@ -173,12 +173,15 @@ import Parallax from "@/components/Parallax/Parallax";
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-between;
-  height: 100vh;
-  width:100vw;
+  height: 100vh;;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   background-image: url('../../assets/images/header-background.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
 
 }
 .headerContainer nav{
