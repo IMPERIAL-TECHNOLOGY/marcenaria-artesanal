@@ -22,7 +22,6 @@
             <div CLASS="separator"/>
           </div>
           <div class="portfolioTabs">
-
               <v-card
               v-for="(item, i) in portifolioTabs" :key="i"
               variant="accordion"
@@ -32,22 +31,14 @@
                   class="portfolioItem"
                   v-bind="props"
                 >
-                  <v-card-title>
-                    {{ item.title }}
-                  </v-card-title>
-                  <v-expand-transition
-                  >
-                    <div class="d-flex transition-fast-in-low-out v-card--reveal text-h2"
-                         v-if="isHovering">
+                  <v-card-title style="text-align: center; font-size: 2vh">{{ item.title }}</v-card-title>
+                  <v-expand-transition>
+                    <div class="transition-fast-in-low-out v-card--reveal" v-if="isHovering">
                       <v-card-item
                         class="portfolioItemExpanded "
                       >
-                        <v-card-title>
-                          {{ item.title }}
-                        </v-card-title>
-                        <v-card-text>
-                          {{ item.text }}
-                        </v-card-text>
+                        <v-card-title>{{ item.title }}</v-card-title>
+                        <v-card-text>{{ item.text }}</v-card-text>
                         <v-btn
                           class="cardButton"
                           :to="{name: item.path, hash: item.anchor}"
@@ -115,27 +106,21 @@ import Parallax from "@/components/Parallax/Parallax";
           {
             name: "cardSala",
             title: "SALA",
-            text: "diuuahsduhasdhosadsdasdasdasdsadsada sdsadsadsaddsdsad" +
-              "sadasddssdadsdasdsadsadsadasdsadsadsadsaddsdsadsadsadssd" +
-              "asdasdsadsaddssdsd",
+            text: "diuuahsduhasdhosadsdasdasdasdsadsada sdsadsadsaddsdsad",
             anchor: "#contact",
             card: false
           },
           {
             name: "cardQuarto",
             title: "QUARTO",
-            text: "diuuahsduhasdhosadsdasdasdasdsadsada sdsadsadsaddsdsad" +
-              "sadasddssdadsdasdsadsadsadasdsadsadsadsaddsdsadsadsadssd" +
-              "asdasdsadsaddssdsd",
+            text: "diuuahsduhasdhosadsdasdasdasdsadsada sdsadsadsaddsdsad",
             anchor: "#contact",
             card: false
           },
           {
             name: "cardCozinha",
             title: "COZINHA",
-            text: "diuuahsduhasdhosadsdasdasdasdsadsada sdsadsadsaddsdsad" +
-              "sadasddssdadsdasdsadsadsadasdsadsadsadsaddsdsadsadsadssd" +
-              "asdasdsadsaddssdsd",
+            text: "diuuahsduhasdhosadsdasdasdasdsadsada sdsadsadsaddsdsad",
             anchor: "#contact",
             card: false
           },
@@ -143,8 +128,7 @@ import Parallax from "@/components/Parallax/Parallax";
             name: "cardEscritório",
             title: "ESCRITÓRIO",
             text: "diuuahsduhasdhosadsdasdasdasdsadsada sdsadsadsaddsdsad" +
-              "sadasddssdadsdasdsadsadsadasdsadsadsadsaddsdsadsadsadssd" +
-              "asdasdsadsaddssdsd",
+              "sadasddssdadsdasdsadsa",
             anchor: "#contact",
             card: false,
           }
@@ -173,7 +157,7 @@ import Parallax from "@/components/Parallax/Parallax";
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-between;
-  height: 100vh;;
+  height: 100vh;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -192,30 +176,31 @@ import Parallax from "@/components/Parallax/Parallax";
 }
 .tabStyle {
   min-height: 7vh;
-  margin-right: 15vw;
-  margin-top: 10vh;
+  margin-right: 10vw;
+  margin-top: 7vh;
 }
 .logo{
-  margin-left: 100px;
-  margin-top: 12vh;
+  margin-left: 10vw;
+  margin-top: 7vh;
 }
 .titleContainer {
+  box-sizing: border-box;
   display: flex;
   flex-flow: column nowrap;
-  justify-content: start;
+  justify-content: flex-end;
   align-items: center;
-  height: 43vh;
+  height: 33vh;
   width: 50vw;
+  margin: 0 auto;
 }
 .titleContent {
   display: flex;
   justify-content: center;
-  flex-flow: row;
+  flex-flow: row nowrap;
   width: 100%;
-
 }
 .titleContent div > h1 {
-  font-size: 25px;
+  font-size: 3vh;
   color: white;
 }
 .titleContent div > h1 > span {
@@ -228,7 +213,7 @@ import Parallax from "@/components/Parallax/Parallax";
   margin-bottom: 17px;
   margin-right: 21px;
   margin-left: 21px;
-  width:300px;
+  width:20vw;
 }
 .historyContainer {
   margin: 0;
@@ -240,8 +225,7 @@ import Parallax from "@/components/Parallax/Parallax";
   margin: 0;
   padding: 0;
   height: 100vh;
-  width: 100vw;
-  background-color: black;
+  width: 100%;
 }
 .contactContainer {
   margin: 0;
@@ -251,39 +235,51 @@ import Parallax from "@/components/Parallax/Parallax";
   background-color: blue;
 }
 .portfolioTabs {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  width: 60vw;
   color: white;
-  height: 45vh;
+  height: 100%;
   display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
+  flex-wrap: nowrap;
+  justify-content: space-around;
 }
  .portfolioItemExpanded {
-   width: 200px;
-   height: 40vh;
-   margin-right: 20px;
+   font-size: 2.2vh;
+   padding: 1vw;
+   margin: 0 auto;
+   box-sizing: border-box;
+   width: 12vw;
+   height: 100%;
    background-color: #341818;
    cursor: pointer;
+
 }
  .portfolioItem {
-   width: 200px;
-   margin-bottom: 0;
-   margin-top: 20vh;
-   margin-right: 20px;
+   font-size: 3vh;
+   background-color: #341818;
+   padding: 0vw;
+   width: 12vw;
+   height: 5vh;
+   margin-top: 25vh;
+   margin-right: 2vw ;
+   margin-left: 2vw ;
    cursor: pointer;
  }
 .v-card--reveal {
-  height: 40vh;
-  align-items: center;
+  font-size: 2.2vh;
+  height: 100%;
+  margin: 0 auto;
+  width: 12vw;
   bottom: 0;
-  justify-content: center;
+  box-sizing: border-box;
+  justify-content: flex-start;
   position: absolute;
-  width: 100%;
 }
 .cardButton {
   width: 100%;
   justify-content: center;
-  align-items: center;
-  align-content: center;
   border: 0.5px white;
   background-color: #341818;
   color: white;
