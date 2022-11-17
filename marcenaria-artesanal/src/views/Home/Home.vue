@@ -6,8 +6,8 @@
               :src="logo"
               alt="Marcenaria artesanal logo"
               class="logo"
-              max-width="200px"
-              width="200px"
+              max-width="15vw"
+              min-width="10vw"
             />
             <TabsNavegation
               :tabs="tabs"
@@ -188,20 +188,24 @@ import Parallax from "@/components/Parallax/Parallax";
   display: flex;
   justify-content: space-between;
   width: 100vw;
+  height: 20vh;
 }
 .tabStyle {
-  margin-right: 100px;
-  margin-top: 80px;
+  min-height: 7vh;
+  margin-right: 15vw;
+  margin-top: 10vh;
 }
 .logo{
   margin-left: 100px;
-  margin-top: 80px;
+  margin-top: 12vh;
 }
 .titleContainer {
   display: flex;
   flex-flow: column nowrap;
-  justify-content: space-between;
+  justify-content: start;
+  align-items: center;
   height: 43vh;
+  width: 50vw;
 }
 .titleContent {
   display: flex;
