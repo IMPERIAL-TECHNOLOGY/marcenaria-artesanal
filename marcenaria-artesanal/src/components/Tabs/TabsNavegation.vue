@@ -3,13 +3,13 @@
     <v-tabs
         background-color="transparent"
         color="white"
-        height="30"
+        height="10vh"
         hide-slider
     >
       <div class="header" v-for="(tab, i) in tabs" :key="i">
         <v-tab
             v-bind="$props"
-            style="color: white; font-size: 1.1em"
+            style="color: white ;font-size: 2.2vh"
             right
             :to="{name: tab.path, hash: tab.anchor}"
         >

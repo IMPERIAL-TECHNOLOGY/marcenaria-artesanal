@@ -6,8 +6,8 @@
               :src="logo"
               alt="Marcenaria artesanal logo"
               class="logo"
-              max-width="200px"
-              width="200px"
+              max-width="15vw"
+              min-width="10vw"
             />
             <TabsNavegation
               :tabs="tabs"
@@ -22,44 +22,9 @@
             <div CLASS="separator"/>
           </div>
           <div class="portfolioTabs">
-
-              <v-card
-              v-for="(item, i) in portifolioTabs" :key="i"
-              variant="accordion"
-              >
-                <v-hover v-slot="{ isHovering, props }">
-                <v-card-item
-                  class="portfolioItem"
-                  v-bind="props"
-                >
-                  <v-card-title>
-                    {{ item.title }}
-                  </v-card-title>
-                  <v-expand-transition
-                  >
-                    <div class="d-flex transition-fast-in-low-out v-card--reveal text-h2"
-                         v-if="isHovering">
-                      <v-card-item
-                        class="portfolioItemExpanded "
-                      >
-                        <v-card-title>
-                          {{ item.title }}
-                        </v-card-title>
-                        <v-card-text>
-                          {{ item.text }}
-                        </v-card-text>
-                        <v-btn
-                          class="cardButton"
-                          :to="{name: item.path, hash: item.anchor}"
-                        >
-                          contato
-                        </v-btn>
-                      </v-card-item>
-                    </div>
-                  </v-expand-transition>
-                </v-card-item>
-                </v-hover>
-            </v-card>
+            <TabCards
+              :tabs="portifolioTabs"
+            />
           </div>
         </div>
       </div>
@@ -88,12 +53,14 @@
 import BaseImage from "@/components/Image/BaseImage";
 import TabsNavegation from "@/components/Tabs/TabsNavegation";
 import Parallax from "@/components/Parallax/Parallax";
+import TabCards from "@/components/TabCards/TabCards";
   export default {
     name: 'Home',
     components: {
       Parallax,
       BaseImage,
-      TabsNavegation
+      TabsNavegation,
+      TabCards
     },
     data() {
       return{
@@ -115,36 +82,28 @@ import Parallax from "@/components/Parallax/Parallax";
           {
             name: "cardSala",
             title: "SALA",
-            text: "diuuahsduhasdhosadsdasdasdasdsadsada sdsadsadsaddsdsad" +
-              "sadasddssdadsdasdsadsadsadasdsadsadsadsaddsdsadsadsadssd" +
-              "asdasdsadsaddssdsd",
+            text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
             anchor: "#contact",
             card: false
           },
           {
             name: "cardQuarto",
             title: "QUARTO",
-            text: "diuuahsduhasdhosadsdasdasdasdsadsada sdsadsadsaddsdsad" +
-              "sadasddssdadsdasdsadsadsadasdsadsadsadsaddsdsadsadsadssd" +
-              "asdasdsadsaddssdsd",
+            text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
             anchor: "#contact",
             card: false
           },
           {
             name: "cardCozinha",
             title: "COZINHA",
-            text: "diuuahsduhasdhosadsdasdasdasdsadsada sdsadsadsaddsdsad" +
-              "sadasddssdadsdasdsadsadsadasdsadsadsadsaddsdsadsadsadssd" +
-              "asdasdsadsaddssdsd",
+            text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
             anchor: "#contact",
             card: false
           },
           {
             name: "cardEscritório",
             title: "ESCRITÓRIO",
-            text: "diuuahsduhasdhosadsdasdasdasdsadsada sdsadsadsaddsdsad" +
-              "sadasddssdadsdasdsadsadsadasdsadsadsadsaddsdsadsadsadssd" +
-              "asdasdsadsaddssdsd",
+            text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
             anchor: "#contact",
             card: false,
           }
@@ -173,7 +132,7 @@ import Parallax from "@/components/Parallax/Parallax";
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-between;
-  height: 100vh;;
+  height: 100vh;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -188,30 +147,35 @@ import Parallax from "@/components/Parallax/Parallax";
   display: flex;
   justify-content: space-between;
   width: 100vw;
+  height: 20vh;
 }
 .tabStyle {
-  margin-right: 100px;
-  margin-top: 80px;
+  min-height: 7vh;
+  margin-right: 10vw;
+  margin-top: 7vh;
 }
 .logo{
-  margin-left: 100px;
-  margin-top: 80px;
+  margin-left: 10vw;
+  margin-top: 7vh;
 }
 .titleContainer {
+  box-sizing: border-box;
   display: flex;
   flex-flow: column nowrap;
-  justify-content: space-between;
-  height: 43vh;
+  justify-content: flex-end;
+  align-items: center;
+  height: 33vh;
+  width: 50vw;
+  margin: 0 auto;
 }
 .titleContent {
   display: flex;
   justify-content: center;
-  flex-flow: row;
+  flex-flow: row nowrap;
   width: 100%;
-
 }
 .titleContent div > h1 {
-  font-size: 25px;
+  font-size: 3vh;
   color: white;
 }
 .titleContent div > h1 > span {
@@ -224,7 +188,7 @@ import Parallax from "@/components/Parallax/Parallax";
   margin-bottom: 17px;
   margin-right: 21px;
   margin-left: 21px;
-  width:300px;
+  width:20vw;
 }
 .historyContainer {
   margin: 0;
@@ -236,8 +200,7 @@ import Parallax from "@/components/Parallax/Parallax";
   margin: 0;
   padding: 0;
   height: 100vh;
-  width: 100vw;
-  background-color: black;
+  width: 100%;
 }
 .contactContainer {
   margin: 0;
@@ -247,41 +210,14 @@ import Parallax from "@/components/Parallax/Parallax";
   background-color: blue;
 }
 .portfolioTabs {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  width: 60vw;
   color: white;
-  height: 45vh;
+  height: 100%;
   display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-}
- .portfolioItemExpanded {
-   width: 200px;
-   height: 40vh;
-   margin-right: 20px;
-   background-color: #341818;
-   cursor: pointer;
-}
- .portfolioItem {
-   width: 200px;
-   margin-bottom: 0;
-   margin-top: 20vh;
-   margin-right: 20px;
-   cursor: pointer;
- }
-.v-card--reveal {
-  height: 40vh;
-  align-items: center;
-  bottom: 0;
-  justify-content: center;
-  position: absolute;
-  width: 100%;
-}
-.cardButton {
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  border: 0.5px white;
-  background-color: #341818;
-  color: white;
+  flex-wrap: nowrap;
+  justify-content: space-around;
 }
 </style>
