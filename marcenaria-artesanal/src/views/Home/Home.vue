@@ -22,35 +22,9 @@
             <div CLASS="separator"/>
           </div>
           <div class="portfolioTabs">
-              <v-card
-              v-for="(item, i) in portifolioTabs" :key="i"
-              variant="accordion"
-              >
-                <v-hover v-slot="{ isHovering, props }">
-                <v-card-item
-                  class="portfolioItem"
-                  v-bind="props"
-                >
-                  <v-card-title style="text-align: center; font-size: 2vh">{{ item.title }}</v-card-title>
-                  <v-expand-transition>
-                    <div class="transition-fast-in-low-out v-card--reveal" v-if="isHovering">
-                      <v-card-item
-                        class="portfolioItemExpanded "
-                      >
-                        <v-card-title>{{ item.title }}</v-card-title>
-                        <v-card-text>{{ item.text }}</v-card-text>
-                        <v-btn
-                          class="cardButton"
-                          :to="{name: item.path, hash: item.anchor}"
-                        >
-                          contato
-                        </v-btn>
-                      </v-card-item>
-                    </div>
-                  </v-expand-transition>
-                </v-card-item>
-                </v-hover>
-            </v-card>
+            <TabCards
+              :tabs="portifolioTabs"
+            />
           </div>
         </div>
       </div>
@@ -79,12 +53,14 @@
 import BaseImage from "@/components/Image/BaseImage";
 import TabsNavegation from "@/components/Tabs/TabsNavegation";
 import Parallax from "@/components/Parallax/Parallax";
+import TabCards from "@/components/TabCards/TabCards";
   export default {
     name: 'Home',
     components: {
       Parallax,
       BaseImage,
-      TabsNavegation
+      TabsNavegation,
+      TabCards
     },
     data() {
       return{
@@ -106,29 +82,28 @@ import Parallax from "@/components/Parallax/Parallax";
           {
             name: "cardSala",
             title: "SALA",
-            text: "diuuahsduhasdhosadsdasdasdasdsadsada sdsadsadsaddsdsad",
+            text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
             anchor: "#contact",
             card: false
           },
           {
             name: "cardQuarto",
             title: "QUARTO",
-            text: "diuuahsduhasdhosadsdasdasdasdsadsada sdsadsadsaddsdsad",
+            text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
             anchor: "#contact",
             card: false
           },
           {
             name: "cardCozinha",
             title: "COZINHA",
-            text: "diuuahsduhasdhosadsdasdasdasdsadsada sdsadsadsaddsdsad",
+            text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
             anchor: "#contact",
             card: false
           },
           {
             name: "cardEscritório",
             title: "ESCRITÓRIO",
-            text: "diuuahsduhasdhosadsdasdasdasdsadsada sdsadsadsaddsdsad" +
-              "sadasddssdadsdasdsadsa",
+            text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
             anchor: "#contact",
             card: false,
           }
@@ -244,44 +219,5 @@ import Parallax from "@/components/Parallax/Parallax";
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-around;
-}
- .portfolioItemExpanded {
-   font-size: 2.2vh;
-   padding: 1vw;
-   margin: 0 auto;
-   box-sizing: border-box;
-   width: 12vw;
-   height: 100%;
-   background-color: #341818;
-   cursor: pointer;
-
-}
- .portfolioItem {
-   font-size: 3vh;
-   background-color: #341818;
-   padding: 0vw;
-   width: 12vw;
-   height: 5vh;
-   margin-top: 25vh;
-   margin-right: 2vw ;
-   margin-left: 2vw ;
-   cursor: pointer;
- }
-.v-card--reveal {
-  font-size: 2.2vh;
-  height: 100%;
-  margin: 0 auto;
-  width: 12vw;
-  bottom: 0;
-  box-sizing: border-box;
-  justify-content: flex-start;
-  position: absolute;
-}
-.cardButton {
-  width: 100%;
-  justify-content: center;
-  border: 0.5px white;
-  background-color: #341818;
-  color: white;
 }
 </style>
