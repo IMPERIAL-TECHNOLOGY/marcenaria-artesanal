@@ -127,7 +127,7 @@ import HomeCarousel from "@/views/Home/Components/Carousel/HomeCarousel";
 .tabStyle {
   min-height: 7vh;
   margin-right: 10vw;
-  margin-top: 7vh;
+  margin-top: 12vh;
 }
 .logo{
   margin-left: 10vw;
@@ -168,7 +168,7 @@ import HomeCarousel from "@/views/Home/Components/Carousel/HomeCarousel";
 .historyContainer {
   margin: 0;
   padding: 0;
-  height: 100vh;
+  height: 200vh;
   width: 100%;
 }
 .contactContainer {

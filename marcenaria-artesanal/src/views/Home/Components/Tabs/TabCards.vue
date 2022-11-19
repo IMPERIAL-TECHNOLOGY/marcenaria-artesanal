@@ -17,6 +17,7 @@
             <v-card-item
               class="portfolioItemExpanded "
               style="height: 30vh; padding: 0.5em "
+              elevation="24"
             >
               <div>
                 <v-card-title

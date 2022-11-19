@@ -3,8 +3,8 @@
     <v-tabs
         background-color="transparent"
         color="white"
-        height="10vh"
         hide-slider
+        height="4vh"
     >
       <div class="header" v-for="(tab, i) in tabs" :key="i">
         <v-tab
