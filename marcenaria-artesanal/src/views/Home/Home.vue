@@ -22,9 +22,7 @@
             <div CLASS="separator"/>
           </div>
           <div class="portfolioTabs">
-            <TabCards
-              :tabs="portifolioTabs"
-            />
+            <TabCards/>
           </div>
         </div>
       </div>
@@ -33,15 +31,24 @@
       class="historyContainer"
     >
     </section>
+  <section
+    id="contact"
+    class="contactContainer"
+  >
+  </section>
     <section
       id="portifolio"
       class="portifolioContainer"
     >
-    </section>
-    <section
-      id="contact"
-      class="contactContainer"
-    >
+      <div class="carouselContainer">
+        <div class="titleCarousel">
+          <h1>PROJETOS</h1>
+          <h4>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</h4>
+        </div>
+        <div class="carousel">
+          <HomeCarousel/>
+        </div>
+      </div>
     </section>
     <footer>
       <div>
@@ -50,17 +57,15 @@
 </template>
 
 <script>
-import BaseImage from "@/components/Image/BaseImage";
 import TabsNavegation from "@/components/Tabs/TabsNavegation";
-import Parallax from "@/components/Parallax/Parallax";
-import TabCards from "@/components/TabCards/TabCards";
+import TabCards from "@/views/Home/Components/Tabs/TabCards";
+import HomeCarousel from "@/views/Home/Components/Carousel/HomeCarousel";
   export default {
     name: 'Home',
     components: {
-      Parallax,
-      BaseImage,
       TabsNavegation,
-      TabCards
+      TabCards,
+      HomeCarousel,
     },
     data() {
       return{
@@ -76,36 +81,6 @@ import TabCards from "@/components/TabCards/TabCards";
           {
             name: 'CONTATO',
             anchor: '#contact',
-          }
-        ],
-        portifolioTabs: [
-          {
-            name: "cardSala",
-            title: "SALA",
-            text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-            anchor: "#contact",
-            card: false
-          },
-          {
-            name: "cardQuarto",
-            title: "QUARTO",
-            text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-            anchor: "#contact",
-            card: false
-          },
-          {
-            name: "cardCozinha",
-            title: "COZINHA",
-            text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-            anchor: "#contact",
-            card: false
-          },
-          {
-            name: "cardEscritório",
-            title: "ESCRITÓRIO",
-            text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-            anchor: "#contact",
-            card: false,
           }
         ],
         logo: `${new URL('../../assets/images/logo.png', import.meta.url)}`,
@@ -124,7 +99,7 @@ import TabCards from "@/components/TabCards/TabCards";
           return this.portifolioTabs[3].card = !this.portifolioTabs[3].card
         }
       }
-    }
+    },
   }
 </script>
 <style scoped>
@@ -196,12 +171,6 @@ import TabCards from "@/components/TabCards/TabCards";
   height: 100vh;
   width: 100%;
 }
-.portifolioContainer {
-  margin: 0;
-  padding: 0;
-  height: 100vh;
-  width: 100%;
-}
 .contactContainer {
   margin: 0;
   padding: 0;
@@ -219,5 +188,34 @@ import TabCards from "@/components/TabCards/TabCards";
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-around;
+}
+.portifolioContainer {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+}
+.carouselContainer {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  width: 80vw;
+  height: 80vh;
+}
+.titleCarousel {
+  margin-bottom: 2vh;
+  font-size: 2.2vh;
+}
+.titleCarousel h4 {
+  color: rgba(0, 0, 0, 0.63);
+}
+.carousel {
+  height: 70vh;
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
 }
 </style>

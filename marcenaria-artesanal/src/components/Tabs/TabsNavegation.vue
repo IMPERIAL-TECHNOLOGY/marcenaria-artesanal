@@ -9,7 +9,7 @@
       <div class="header" v-for="(tab, i) in tabs" :key="i">
         <v-tab
             v-bind="$props"
-            style="color: white ;font-size: 2.2vh"
+            style="color: white ;font-size: 2.2vh; margin-left: 2vh; margin-right: 2vh"
             right
             :to="{name: tab.path, hash: tab.anchor}"
         >
