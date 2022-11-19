@@ -9,10 +9,10 @@
         class="portfolioItem"
         v-bind="props"
       >
-        <v-card-title
+        <div
           class="cardTab"
         >{{ item.title }}
-        </v-card-title>
+        </div>
         <v-expand-transition>
           <div class="transition-fast-in-low-out v-card--reveal" v-if="isHovering">
             <v-card-item
@@ -64,12 +64,10 @@ export default {
 
 }
 .portfolioItem {
-  font-size: 3vh;
-  background-color: #341818;
   padding: 0;
-  width: 12vw;
+  min-width: 12vw;
   height: 5vh;
-  margin-top: 25vh;
+  margin-top: 10vh;
   margin-right: 2vw ;
   margin-left: 2vw ;
   cursor: pointer;
@@ -105,8 +103,10 @@ export default {
   line-height: 2.3vh !important;
 }
 .cardTab {
-  text-align: center;
-  font-size: 1.7vh;
+  word-wrap:  normal;
   padding: 1vh;
+  text-align: center;
+  font-size: 2.4vh;
+  min-width: 12vw;
 }
 </style>
