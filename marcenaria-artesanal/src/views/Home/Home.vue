@@ -1,106 +1,96 @@
 <template>
-      <div class="headerContainer">
-        <div>
-          <nav>
-            <v-img
-              :src="logo"
-              alt="Marcenaria artesanal logo"
-              class="logo"
-              max-width="15vw"
-              min-width="10vw"
-            />
-            <TabsNavegation
-              :tabs="tabs"
-              class="tabStyle"
-            />
-          </nav>
+  <div class="headerContainer">
+    <div>
+      <nav>
+        <v-img
+          :src="logo"
+          alt="Marcenaria artesanal logo"
+          class="logo"
+          max-width="15vw"
+          min-width="10vw"
+        />
+        <TabsNavegation :tabs="tabs" class="tabStyle" />
+      </nav>
+    </div>
+    <div class="titleContainer">
+      <div class="titleContent">
+        <div CLASS="separator" />
+        <div class="text-no-wrap">
+          <h1>MARCENARIA <span>ARTESANAL</span></h1>
         </div>
-        <div class="titleContainer">
-          <div class="titleContent">
-            <div CLASS="separator"/>
-            <div class="text-no-wrap"><h1>MARCENARIA <span>ARTESANAL</span></h1></div>
-            <div CLASS="separator"/>
-          </div>
-          <div class="portfolioTabs">
-            <TabCards/>
-          </div>
-        </div>
+        <div CLASS="separator" />
       </div>
-    <section
-      id="history"
-      class="historyContainer"
-    >
-    </section>
-  <section
-    id="contact"
-    class="contactContainer"
-  >
+      <div class="portfolioTabs">
+        <TabCards />
+      </div>
+    </div>
+  </div>
+  <section id="history" class="historyContainer"></section>
+  <section id="contact" class="contactContainer"></section>
+  <section id="portifolio" class="portifolioContainer">
+    <div class="carouselContainer">
+      <div class="titleCarousel">
+        <h1>PROJETOS</h1>
+        <h4>
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry.
+        </h4>
+      </div>
+      <div class="carousel">
+        <HomeCarousel />
+      </div>
+    </div>
   </section>
-    <section
-      id="portifolio"
-      class="portifolioContainer"
-    >
-      <div class="carouselContainer">
-        <div class="titleCarousel">
-          <h1>PROJETOS</h1>
-          <h4>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</h4>
-        </div>
-        <div class="carousel">
-          <HomeCarousel/>
-        </div>
-      </div>
-    </section>
-    <footer>
-      <div>
-      </div>
-    </footer>
+  <FooterVue />
 </template>
 
 <script>
 import TabsNavegation from "@/components/Tabs/TabsNavegation";
 import TabCards from "@/views/Home/Components/Tabs/TabCards";
 import HomeCarousel from "@/views/Home/Components/Carousel/HomeCarousel";
-  export default {
-    name: 'Home',
-    components: {
-      TabsNavegation,
-      TabCards,
-      HomeCarousel,
-    },
-    data() {
-      return{
-        tabs: [
-          {
-            name: 'HISTÓRIA',
-            anchor: '#history',
-          },
-          {
-            name: 'PROJETOS',
-            anchor: '#portifolio',
-          },
-          {
-            name: 'CONTATO',
-            anchor: '#contact',
-          }
-        ],
-        logo: `${new URL('../../assets/images/logo.png', import.meta.url)}`,
+import FooterVue from "@/components/Footer/FooterVue.vue";
+export default {
+  name: "Home",
+  components: {
+    TabsNavegation,
+    TabCards,
+    HomeCarousel,
+    FooterVue,
+  },
+  data() {
+    return {
+      tabs: [
+        {
+          name: "HISTÓRIA",
+          anchor: "#history",
+        },
+        {
+          name: "PROJETOS",
+          anchor: "#portifolio",
+        },
+        {
+          name: "CONTATO",
+          anchor: "#contact",
+        },
+      ],
+      logo: `${new URL("../../assets/images/logo.png", import.meta.url)}`,
+    };
+  },
+  methods: {
+    cardExpanded(name) {
+      const card = name;
+      if (card === "cardSala") {
+        return (this.portifolioTabs[0].card = !this.portifolioTabs[0].card);
+      } else if (card === "cardQuarto") {
+        return (this.portifolioTabs[1].card = !this.portifolioTabs[1].card);
+      } else if (card === "cardCozinha") {
+        return (this.portifolioTabs[2].card = !this.portifolioTabs[2].card);
+      } else {
+        return (this.portifolioTabs[3].card = !this.portifolioTabs[3].card);
       }
     },
-    methods: {
-      cardExpanded(name) {
-        const card = name
-        if (card === "cardSala") {
-          return this.portifolioTabs[0].card = !this.portifolioTabs[0].card
-        } else if (card === "cardQuarto") {
-          return this.portifolioTabs[1].card = !this.portifolioTabs[1].card
-        } else if (card === "cardCozinha") {
-          return this.portifolioTabs[2].card = !this.portifolioTabs[2].card
-        } else {
-          return this.portifolioTabs[3].card = !this.portifolioTabs[3].card
-        }
-      }
-    },
-  }
+  },
+};
 </script>
 <style scoped>
 .headerContainer {
@@ -111,14 +101,13 @@ import HomeCarousel from "@/views/Home/Components/Carousel/HomeCarousel";
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  background-image: url('../../assets/images/header-background.png');
+  background-image: url("../../assets/images/header-background.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;
   background-size: cover;
-
 }
-.headerContainer nav{
+.headerContainer nav {
   display: flex;
   justify-content: space-between;
   width: 100vw;
@@ -129,7 +118,7 @@ import HomeCarousel from "@/views/Home/Components/Carousel/HomeCarousel";
   margin-right: 10vw;
   margin-top: 7vh;
 }
-.logo{
+.logo {
   margin-left: 10vw;
   margin-top: 7vh;
 }
@@ -159,11 +148,11 @@ import HomeCarousel from "@/views/Home/Components/Carousel/HomeCarousel";
 }
 .separator {
   border-bottom: 2px groove white;
-  box-sizing:border-box;
+  box-sizing: border-box;
   margin-bottom: 17px;
   margin-right: 21px;
   margin-left: 21px;
-  width:20vw;
+  width: 20vw;
 }
 .historyContainer {
   margin: 0;
