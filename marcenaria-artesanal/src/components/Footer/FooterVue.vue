@@ -2,10 +2,7 @@
   <div class="footer-container">
     <h3 class="footer-title">DESIGN, BELEZA E SENTIDO</h3>
     <div class="footer-container-2">
-      <img
-        src="http://localhost:3000/src/assets/images/logo.png"
-        class="footer-logo"
-      />
+      <img :src="logo" class="footer-logo" />
       <div class="footer-social">
         <a href="https://pt-br.facebook.com/marcenariartesanal/"
           ><font-awesome-icon
@@ -78,6 +75,12 @@
 <script>
 export default {
   name: "FooterVue",
+
+  data() {
+    return {
+      logo: `${new URL("../../assets/images/logo.png", import.meta.url)}`,
+    };
+  },
 };
 </script>
 
@@ -216,6 +219,7 @@ span {
   align-self: center;
   height: 50px;
   margin-top: 50px;
+  color: white;
 }
 .copyright p {
   margin-left: 5px;
