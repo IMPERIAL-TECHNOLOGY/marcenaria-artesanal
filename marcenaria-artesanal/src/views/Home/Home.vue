@@ -25,8 +25,13 @@
       </div>
     </div>
   </div>
-  <section id="history" class="historyContainer"></section>
-  <section id="contact" class="contactContainer"></section>
+  <section id="history">
+    <History class="historyContainer" />
+  </section>
+
+  <section id="contact">
+    <Contact class="contactContainer" />
+  </section>
   <section id="portifolio" class="portifolioContainer">
     <div class="carouselContainer">
       <div class="titleCarousel">
@@ -49,6 +54,8 @@ import TabsNavegation from "@/components/Tabs/TabsNavegation";
 import TabCards from "@/views/Home/Components/Tabs/TabCards";
 import HomeCarousel from "@/views/Home/Components/Carousel/HomeCarousel";
 import FooterVue from "@/components/Footer/FooterVue.vue";
+import History from "@/views/Home/Components/History/History";
+import Contact from "./Components/Contact/Contact.vue";
 export default {
   name: "Home",
   components: {
@@ -56,6 +63,8 @@ export default {
     TabCards,
     HomeCarousel,
     FooterVue,
+    History,
+    Contact,
   },
   data() {
     return {
@@ -154,12 +163,7 @@ export default {
   margin-left: 21px;
   width: 20vw;
 }
-.historyContainer {
-  margin: 0;
-  padding: 0;
-  height: 100vh;
-  width: 100%;
-}
+
 .contactContainer {
   margin: 0;
   padding: 0;

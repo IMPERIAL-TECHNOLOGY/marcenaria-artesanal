@@ -3,6 +3,7 @@ import { createApp, VueElement } from "vue";
 import { registerPlugins } from "@/plugins";
 import vuetify from "./plugins/vuetify";
 import router from "@/router/router";
+import { MotionPlugin } from "@vueuse/motion";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fas } from "@fortawesome/free-solid-svg-icons";
 import { fab } from "@fortawesome/free-brands-svg-icons";
@@ -20,4 +21,5 @@ app
   .component("font-awesome-icon", FontAwesomeIcon)
   .use(vuetify)
   .use(router)
+  .use(MotionPlugin)
   .mount("#app");
