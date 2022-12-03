@@ -1,7 +1,37 @@
 <template>
   <div class="footer-container">
-    <h3 class="footer-title">DESIGN, BELEZA E SENTIDO</h3>
-    <div class="footer-container-2">
+    <h3
+      class="footer-title"
+      v-motion
+      :initial="{ opacity: 0 }"
+      :visibleOnce="{
+        opacity: 1,
+
+        transition: {
+          duration: 500,
+          type: 'keyframes',
+          ease: 'easeIn',
+        },
+      }"
+      :delay="400"
+    >
+      DESIGN, BELEZA E SENTIDO
+    </h3>
+    <div
+      class="footer-container-2"
+      v-motion
+      :initial="{ opacity: 0 }"
+      :visibleOnce="{
+        opacity: 1,
+
+        transition: {
+          duration: 500,
+          type: 'keyframes',
+          ease: 'easeIn',
+        },
+      }"
+      :delay="400"
+    >
       <img :src="logo" class="footer-logo" />
       <div class="footer-social">
         <a href="https://pt-br.facebook.com/marcenariartesanal/"
