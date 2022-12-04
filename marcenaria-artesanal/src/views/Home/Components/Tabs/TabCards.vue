@@ -1,6 +1,7 @@
 <template>
   <v-card
-    v-for="(item, i) in portifolioTabs" :key="i"
+    v-bind="$props"
+    v-for="(item, i) in tabs" :key="i"
     style="background-color: transparent"
   >
     <v-hover v-slot="{ isHovering, props }">
@@ -15,7 +16,7 @@
         <v-expand-transition>
           <div class="transition-fast-in-low-out v-card--reveal" v-if="isHovering">
             <v-card-item
-              class="portfolioItemExpanded "
+              class="portfolioItemExpanded"
               style="height: 30vh; padding: 0.5em "
             >
               <div>
@@ -46,38 +47,11 @@
 export default {
   name: 'TabCards',
   components: {},
+  props: {
+    tabs: Array
+  },
   data() {
     return{
-      portifolioTabs: [
-        {
-          name: "cardSala",
-          title: "SALA",
-          text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-          anchor: "#contact",
-          card: false
-        },
-        {
-          name: "cardQuarto",
-          title: "QUARTO",
-          text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-          anchor: "#contact",
-          card: false
-        },
-        {
-          name: "cardCozinha",
-          title: "COZINHA",
-          text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-          anchor: "#contact",
-          card: false
-        },
-        {
-          name: "cardEscritório",
-          title: "ESCRITÓRIO",
-          text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-          anchor: "#contact",
-          card: false,
-        }
-      ],
     }
   },
   methods: {},

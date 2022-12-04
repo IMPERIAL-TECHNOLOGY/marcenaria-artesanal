@@ -1,6 +1,9 @@
 <template>
-  <div class="headerContainer">
-    <div>
+  <div
+    class="headerContainer"
+    :style="heroBackground"
+  >
+    <div v-if="!$vuetify.display.xs && !$vuetify.display.sm">
       <nav>
         <v-img
           :src="logo"
@@ -20,8 +23,10 @@
         </div>
         <div CLASS="separator" />
       </div>
-      <div class="portfolioTabs">
-        <TabCards />
+      <div v-if="!$vuetify.display.xs && !$vuetify.display.sm" class="portfolioTabs">
+        <TabCards
+        :tabs="portifolioTabs"
+        />
       </div>
     </div>
   </div>
@@ -82,7 +87,38 @@ export default {
           anchor: "#contact",
         },
       ],
+      portifolioTabs: [
+        {
+          name: "cardSala",
+          title: "SALA",
+          text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+          anchor: "#contact",
+          card: false
+        },
+        {
+          name: "cardQuarto",
+          title: "QUARTO",
+          text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+          anchor: "#contact",
+          card: false
+        },
+        {
+          name: "cardCozinha",
+          title: "COZINHA",
+          text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+          anchor: "#contact",
+          card: false
+        },
+        {
+          name: "cardEscritório",
+          title: "ESCRITÓRIO",
+          text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+          anchor: "#contact",
+          card: false,
+        }
+      ],
       logo: `${new URL("../../assets/images/logo.png", import.meta.url)}`,
+      heroBackground: `background-image: url("../../assets/images/header-background.png")`
     };
   },
   methods: {
