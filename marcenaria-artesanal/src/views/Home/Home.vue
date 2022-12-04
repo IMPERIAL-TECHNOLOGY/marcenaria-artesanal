@@ -1,7 +1,6 @@
 <template>
   <div
     class="headerContainer"
-    :style="heroBackground"
   >
     <div v-if="!$vuetify.display.xs && !$vuetify.display.sm">
       <nav>
@@ -118,7 +117,7 @@ export default {
         }
       ],
       logo: `${new URL("../../assets/images/logo.png", import.meta.url)}`,
-      heroBackground: `background-image: url("../../assets/images/header-background.png")`
+      heroBackground: `${new URL("../../assets/images/header-background.png", import.meta.url)}`
     };
   },
   methods: {
