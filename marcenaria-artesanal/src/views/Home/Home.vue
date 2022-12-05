@@ -1,7 +1,5 @@
 <template>
-  <div
-    class="headerContainer"
-  >
+  <div class="headerContainer">
     <div v-if="!$vuetify.display.xs && !$vuetify.display.sm">
       <nav>
         <v-img
@@ -22,10 +20,11 @@
         </div>
         <div CLASS="separator" />
       </div>
-      <div v-if="!$vuetify.display.xs && !$vuetify.display.sm" class="portfolioTabs">
-        <TabCards
-        :tabs="portifolioTabs"
-        />
+      <div
+        v-if="!$vuetify.display.xs && !$vuetify.display.sm"
+        class="portfolioTabs"
+      >
+        <TabCards :tabs="portifolioTabs" />
       </div>
     </div>
   </div>
@@ -116,21 +115,21 @@ export default {
           title: "SALA",
           text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
           anchor: "#contact",
-          card: false
+          card: false,
         },
         {
           name: "cardQuarto",
           title: "QUARTO",
           text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
           anchor: "#contact",
-          card: false
+          card: false,
         },
         {
           name: "cardCozinha",
           title: "COZINHA",
           text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
           anchor: "#contact",
-          card: false
+          card: false,
         },
         {
           name: "cardEscritório",
@@ -138,10 +137,13 @@ export default {
           text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
           anchor: "#contact",
           card: false,
-        }
+        },
       ],
       logo: `${new URL("../../assets/images/logo.png", import.meta.url)}`,
-      heroBackground: `${new URL("../../assets/images/header-background.png", import.meta.url)}`
+      heroBackground: `${new URL(
+        "../../assets/images/header-background.png",
+        import.meta.url
+      )}`,
     };
   },
   methods: {
@@ -244,7 +246,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 90vh;
+  height: 100vh;
   width: 100%;
 }
 .carouselContainer {
@@ -254,7 +256,7 @@ export default {
   width: 100%;
   max-width: 1400px;
   padding: 50px 5vw 0 5vw;
-  height: 90vh;
+  height: 100%;
 }
 .projects-title {
   font-family: Arboria-Bold;
