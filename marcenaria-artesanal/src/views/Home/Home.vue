@@ -1,5 +1,8 @@
 <template>
-  <div class="headerContainer">
+  <div
+    class="headerContainer"
+    :style="{ backgroundImage: `url(${heroBackground})` }"
+  >
     <div v-if="!$vuetify.display.xs && !$vuetify.display.sm">
       <nav>
         <v-img
@@ -24,7 +27,10 @@
         v-if="!$vuetify.display.xs && !$vuetify.display.sm"
         class="portfolioTabs"
       >
-        <TabCards :tabs="portifolioTabs" />
+        <TabCards
+          :tabs="portifolioTabs"
+          @background="changeBackground"
+        />
       </div>
     </div>
   </div>
@@ -116,6 +122,7 @@ export default {
           text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
           anchor: "#contact",
           card: false,
+          background: `${new URL('../../assets/heroCards/header-background4.png', import.meta.url)}`
         },
         {
           name: "cardQuarto",
@@ -123,6 +130,7 @@ export default {
           text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
           anchor: "#contact",
           card: false,
+          background: `${new URL('../../assets/heroCards/header-background2.png', import.meta.url)}`
         },
         {
           name: "cardCozinha",
@@ -130,35 +138,25 @@ export default {
           text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
           anchor: "#contact",
           card: false,
-        },
+          background:`${new URL('../../assets/heroCards/header-background3.png', import.meta.url)}`
+  },
         {
           name: "cardEscritório",
           title: "ESCRITÓRIO",
           text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
           anchor: "#contact",
           card: false,
+          background: `${new URL('../../assets/heroCards/header-background.png', import.meta.url)}`
         },
       ],
       logo: `${new URL("../../assets/images/logo.png", import.meta.url)}`,
-      heroBackground: `${new URL(
-        "../../assets/images/header-background.png",
-        import.meta.url
-      )}`,
+      heroBackground: `${new URL('../../assets/heroCards/header-background.png', import.meta.url)}`,
     };
   },
   methods: {
-    cardExpanded(name) {
-      const card = name;
-      if (card === "cardSala") {
-        return (this.portifolioTabs[0].card = !this.portifolioTabs[0].card);
-      } else if (card === "cardQuarto") {
-        return (this.portifolioTabs[1].card = !this.portifolioTabs[1].card);
-      } else if (card === "cardCozinha") {
-        return (this.portifolioTabs[2].card = !this.portifolioTabs[2].card);
-      } else {
-        return (this.portifolioTabs[3].card = !this.portifolioTabs[3].card);
-      }
-    },
+    changeBackground(background) {
+      this.heroBackground = background
+    }
   },
 };
 </script>
@@ -171,7 +169,6 @@ export default {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  background-image: url("../../assets/images/header-background.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;
