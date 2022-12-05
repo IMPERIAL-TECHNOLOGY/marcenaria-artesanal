@@ -169,7 +169,7 @@ export default {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  transition: background-image 0.7s ease-in-out;
+  transition: background-image 1.3s ease-in-out;
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;
