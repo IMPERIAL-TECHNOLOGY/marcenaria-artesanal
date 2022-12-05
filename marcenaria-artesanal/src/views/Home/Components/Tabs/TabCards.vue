@@ -4,7 +4,9 @@
     v-for="(item, i) in tabs" :key="i"
     style="background-color: transparent"
   >
-    <v-hover v-slot="{ isHovering, props }">
+    <v-hover
+      v-slot="{ isHovering, props }"
+    >
       <v-card-item
         class="portfolioItem"
         v-bind="props"
@@ -18,6 +20,7 @@
             <v-card-item
               class="portfolioItemExpanded"
               style="height: 30vh; padding: 0.5em "
+              @mouseover.once="setBackground(item)"
             >
               <div>
                 <v-card-title
@@ -52,9 +55,15 @@ export default {
   },
   data() {
     return{
+
     }
   },
-  methods: {},
+  methods: {
+    setBackground(item) {
+    const background = item.background
+    this.$emit('background', background)
+    },
+  },
   computed: {}
 }
 </script>
