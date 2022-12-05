@@ -122,7 +122,7 @@ export default {
           text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
           anchor: "#contact",
           card: false,
-          background: `${new URL('../../assets/heroCards/background4.jpg', import.meta.url)}`
+          background: ''
         },
         {
           name: "cardQuarto",
@@ -130,7 +130,7 @@ export default {
           text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
           anchor: "#contact",
           card: false,
-          background: `${new URL('../../assets/heroCards/background2.jpg', import.meta.url)}`
+          background: ''
         },
         {
           name: "cardCozinha",
@@ -138,7 +138,7 @@ export default {
           text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
           anchor: "#contact",
           card: false,
-          background:`${new URL('../../assets/heroCards/background3.jpg', import.meta.url)}`
+          background:''
   },
         {
           name: "cardEscritório",
@@ -146,7 +146,7 @@ export default {
           text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
           anchor: "#contact",
           card: false,
-          background: `${new URL('../../assets/heroCards/background.jpg', import.meta.url)}`
+          background: ''
         },
       ],
       logo: `${new URL("../../assets/images/logo.png", import.meta.url)}`,
@@ -158,6 +158,12 @@ export default {
       this.heroBackground = background
     }
   },
+  created() {
+    this.portifolioTabs[0].background = `${new URL('../../assets/heroCards/background4.jpg', import.meta.url)}`
+    this.portifolioTabs[1].background = `${new URL('../../assets/heroCards/background3.jpg', import.meta.url)}`
+    this.portifolioTabs[2].background = `${new URL('../../assets/heroCards/background2.jpg', import.meta.url)}`
+    this.portifolioTabs[3].background = `${new URL('../../assets/heroCards/background.jpg', import.meta.url)}`
+  }
 };
 </script>
 <style scoped>
