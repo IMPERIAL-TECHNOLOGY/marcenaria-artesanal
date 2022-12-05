@@ -158,7 +158,7 @@ export default {
       this.heroBackground = background
     }
   },
-  created() {
+  mounted() {
     this.portifolioTabs[0].background = `${new URL('../../assets/heroCards/background4.jpg', import.meta.url)}`
     this.portifolioTabs[1].background = `${new URL('../../assets/heroCards/background3.jpg', import.meta.url)}`
     this.portifolioTabs[2].background = `${new URL('../../assets/heroCards/background2.jpg', import.meta.url)}`
