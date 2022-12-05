@@ -36,6 +36,10 @@ import { RouterView } from "vue-router";
   font-family: "Arboria-Thin";
   src: local("Arboria-Thin"), url(./fonts/Arboria/OTF/Arboria-Thin.otf);
 }
+@font-face {
+  font-family: "Arboria-Book";
+  src: local("Arboria-Book"), url(./fonts/Arboria/OTF/Arboria-Book.otf);
+}
 html,
 body,
 #root {

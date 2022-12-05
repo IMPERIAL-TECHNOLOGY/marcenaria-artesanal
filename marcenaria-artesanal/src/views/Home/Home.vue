@@ -37,7 +37,21 @@
     <Contact class="contactContainer" />
   </section>
   <section id="portifolio" class="portifolioContainer">
-    <div class="carouselContainer">
+    <div
+      class="carouselContainer"
+      v-motion
+      :initial="{ opacity: 0 }"
+      :visibleOnce="{
+        opacity: 1,
+
+        transition: {
+          duration: 500,
+          type: 'keyframes',
+          ease: 'easeIn',
+        },
+      }"
+      :delay="400"
+    >
       <div class="titleCarousel">
         <h1>PROJETOS</h1>
         <h4>
@@ -202,9 +216,7 @@ export default {
 .contactContainer {
   margin: 0;
   padding: 0;
-  height: 100vh;
   width: 100%;
-  background-color: blue;
 }
 .portfolioTabs {
   padding: 0;
@@ -234,10 +246,18 @@ export default {
 }
 .titleCarousel {
   margin-bottom: 2vh;
-  font-size: 2.2vh;
 }
+.titleCarousel h1 {
+  font-family: Arboria-Bold;
+  font-size: 24px;
+  margin-bottom: 18px;
+}
+
 .titleCarousel h4 {
   color: rgba(0, 0, 0, 0.63);
+  margin-bottom: 20px;
+  font-size: 18px;
+  font-family: Arboria-Light;
 }
 .carousel {
   height: 70vh;
@@ -245,5 +265,19 @@ export default {
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
+}
+@media (min-width: 768px) {
+  .titleCarousel h1 {
+    font-family: Arboria-Bold;
+    font-size: 32px;
+    margin-bottom: 24px;
+  }
+
+  .titleCarousel h4 {
+    color: rgba(0, 0, 0, 0.63);
+    margin-bottom: 50px;
+    font-size: 24px;
+    font-family: Arboria-Light;
+  }
 }
 </style>
