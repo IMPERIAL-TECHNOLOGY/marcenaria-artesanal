@@ -122,7 +122,7 @@ export default {
           text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
           anchor: "#contact",
           card: false,
-          background: `${new URL('../../assets/heroCards/header-background4.png', import.meta.url)}`
+          background: `${new URL('../../assets/heroCards/background4.png', import.meta.url)}`
         },
         {
           name: "cardQuarto",
@@ -130,7 +130,7 @@ export default {
           text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
           anchor: "#contact",
           card: false,
-          background: `${new URL('../../assets/heroCards/header-background2.png', import.meta.url)}`
+          background: `${new URL('../../assets/heroCards/background2.png', import.meta.url)}`
         },
         {
           name: "cardCozinha",
@@ -138,7 +138,7 @@ export default {
           text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
           anchor: "#contact",
           card: false,
-          background:`${new URL('../../assets/heroCards/header-background3.png', import.meta.url)}`
+          background:`${new URL('../../assets/heroCards/background3.png', import.meta.url)}`
   },
         {
           name: "cardEscritório",
@@ -146,11 +146,11 @@ export default {
           text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
           anchor: "#contact",
           card: false,
-          background: `${new URL('../../assets/heroCards/header-background.png', import.meta.url)}`
+          background: `${new URL('../../assets/heroCards/background.png', import.meta.url)}`
         },
       ],
       logo: `${new URL("../../assets/images/logo.png", import.meta.url)}`,
-      heroBackground: `${new URL('../../assets/heroCards/header-background.png', import.meta.url)}`,
+      heroBackground: `${new URL('../../assets/heroCards/background.png', import.meta.url)}`,
     };
   },
   methods: {
