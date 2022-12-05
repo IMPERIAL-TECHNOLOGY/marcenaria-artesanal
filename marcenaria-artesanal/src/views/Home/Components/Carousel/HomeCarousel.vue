@@ -12,7 +12,7 @@
         v-if="(index + 1) % columns === 1 || columns === 1"
         :key="index"
       >
-        <v-row class="flex-nowrap" style="height: 100%; margin: 0 -62px">
+        <v-row class="flex-nowrap" style="height: 100%; margin: 0 -22px">
           <template v-for="(n, i) in columns">
             <template v-if="+index + i < carouselItems.length">
               <v-col :key="i">
@@ -29,12 +29,13 @@
                   <h1
                     style="
                       height: 40px;
-                      font-size: 24px;
-                      margin-top: 31px;
-                      font-family: Arboria-Bold;
+                      font-size: 20px;
+                      margin-top: 20px;
+                      font-family: Arboria-Medium;
+                      color: rgba(0, 0, 0, 0.7);
                       @media (min-width: 768px) {
                         font-size: 32px;
-                        margin-top: 41px;
+                        margin-top: 21px;
                       }
                     "
                   >
@@ -43,13 +44,13 @@
                   <h4
                     style="
                       height: 15vh;
-                      font-size: 18px;
+                      font-size: 15px;
                       font-family: Arboria-Light;
                       margin-top: 12px;
-                      color: rgba(0, 0, 0, 0.7);
+                      color: rgba(0, 0, 0, 0.6);
                       @media (min-width: 768px) {
                         font-size: 24px;
-                        margin-top: 24px;
+                        margin-top: 14px;
                       }
                     "
                   >
@@ -149,11 +150,10 @@ export default {
   },
   computed: {
     columns() {
-      if (this.$vuetify.display.smAndDown) {
+      if (this.$vuetify.display.xs) {
         return 1;
       }
-
-      if (this.$vuetify.display.lgAndDown) {
+      if (this.$vuetify.display.smAndDown) {
         return 2;
       }
 
@@ -164,8 +164,8 @@ export default {
 </script>
 <style>
 .carouselItem {
-  margin-right: 50px;
-  margin-left: 50px;
-  height: 65vh;
+  margin-right: 10px;
+  margin-left: 10px;
+  height: 40vh;
 }
 </style>

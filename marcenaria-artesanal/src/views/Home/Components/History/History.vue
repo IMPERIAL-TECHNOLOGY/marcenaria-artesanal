@@ -304,6 +304,7 @@ h3 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     margin: 50px 0 50px 0;
+    border-bottom: 0.5px solid rgba(0, 0, 0, 0.2);
   }
   .hist-bg-texts {
     align-self: center;
@@ -393,6 +394,9 @@ h3 {
 }
 
 @media (min-width: 1200px) {
+  .hist-intro-container {
+    border: none;
+  }
   .hist-text-intro {
     border: none;
     margin-left: 15%;
