@@ -3,14 +3,17 @@
     class="headerContainer"
     :style="{ backgroundImage: `url(${heroBackground})` }"
   >
-    <div v-if="!$vuetify.display.xs && !$vuetify.display.sm">
+    <div
+      v-if="!$vuetify.display.xs && !$vuetify.display.sm"
+      class="navContainer"
+    >
       <nav>
         <v-img
           :src="logo"
           alt="Marcenaria artesanal logo"
           class="logo"
-          max-width="15vw"
-          min-width="10vw"
+          max-width="200px"
+          min-width="150px"
         />
         <TabsNavegation :tabs="tabs" class="tabStyle" />
       </nav>
@@ -30,6 +33,7 @@
         <TabCards
           :tabs="portifolioTabs"
           @background="changeBackground"
+          @hovering="hovering"
         />
       </div>
     </div>
@@ -151,6 +155,7 @@ export default {
       ],
       logo: `${new URL("../../assets/images/logo.png", import.meta.url)}`,
       heroBackground: `${new URL('../../assets/heroCards/background.jpg', import.meta.url)}`,
+      hovering: false,
     };
   },
   methods: {
@@ -184,17 +189,19 @@ export default {
 .headerContainer nav {
   display: flex;
   justify-content: space-between;
-  width: 100vw;
+  margin: 0 auto;
+  max-width: 1300px;
   height: 20vh;
 }
 .tabStyle {
-  min-height: 7vh;
-  margin-right: 10vw;
-  margin-top: 7vh;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 .logo {
-  margin-left: 10vw;
-  margin-top: 7vh;
+display: flex;
+align-items: center;
+justify-content: flex-start;
 }
 .titleContainer {
   box-sizing: border-box;
@@ -203,8 +210,9 @@ export default {
   justify-content: flex-end;
   align-items: center;
   height: 33vh;
-  width: 50vw;
+  max-width: 70em;
   margin: 0 auto;
+  background-color: black;
 }
 .titleContent {
   display: flex;
@@ -213,7 +221,7 @@ export default {
   width: 100%;
 }
 .titleContent div > h1 {
-  font-size: 3vh;
+  font-size: 1.6em;
   color: white;
 }
 .titleContent div > h1 > span {
@@ -226,7 +234,7 @@ export default {
   margin-bottom: 17px;
   margin-right: 21px;
   margin-left: 21px;
-  width: 20vw;
+  width: 100%;
 }
 
 .contactContainer {
@@ -238,7 +246,7 @@ export default {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  width: 60vw;
+  width: 100%;
   color: white;
   height: 100%;
   display: flex;

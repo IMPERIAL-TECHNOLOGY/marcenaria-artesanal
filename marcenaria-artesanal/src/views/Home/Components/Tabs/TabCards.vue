@@ -2,7 +2,7 @@
   <v-card
     v-bind="$props"
     v-for="(item, i) in tabs" :key="i"
-    style="background-color: transparent"
+    style="background-color: transparent; max-width: 1280px"
   >
     <v-hover
       v-slot="{ isHovering, props }"

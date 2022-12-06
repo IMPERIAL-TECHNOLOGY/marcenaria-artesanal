@@ -1,15 +1,14 @@
 <template>
   <div class="test">
     <v-tabs
-        background-color="transparent"
         color="white"
-        height="10vh"
+        height="70px"
         hide-slider
     >
       <div class="header" v-for="(tab, i) in tabs" :key="i">
         <v-tab
             v-bind="$props"
-            style="color: white ;font-size: 2.2vh; margin-left: 2vh; margin-right: 2vh"
+            style="color: white ;font-size: 1.2em; font-family: Arboria-Bold, sans-serif"
             right
             :to="{name: tab.path, hash: tab.anchor}"
         >
@@ -28,7 +27,4 @@ export default {
 }
 </script>
 <style scoped>
-test {
-  width: 100%;
-}
 </style>
