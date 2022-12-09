@@ -3,25 +3,28 @@
     class="headerContainer"
     :style="{ backgroundImage: `url(${heroBackground})` }"
   >
-    <div v-if="!$vuetify.display.xs && !$vuetify.display.sm">
+    <div
+      v-if="!$vuetify.display.xs && !$vuetify.display.sm"
+      class="navContainer"
+    >
       <nav>
         <v-img
           :src="logo"
           alt="Marcenaria artesanal logo"
           class="logo"
-          max-width="15vw"
-          min-width="10vw"
+          max-width="200px"
+          min-width="150px"
         />
         <TabsNavegation :tabs="tabs" class="tabStyle" />
       </nav>
     </div>
     <div class="titleContainer">
       <div class="titleContent">
-        <div CLASS="separator" />
+        <div class="separator" />
         <div class="text-no-wrap">
           <h1>MARCENARIA <span>ARTESANAL</span></h1>
         </div>
-        <div CLASS="separator" />
+        <div class="separator"/>
       </div>
       <div
         v-if="!$vuetify.display.xs && !$vuetify.display.sm"
@@ -30,6 +33,7 @@
         <TabCards
           :tabs="portifolioTabs"
           @background="changeBackground"
+          @hovering="hovering"
         />
       </div>
     </div>
@@ -122,7 +126,8 @@ export default {
           text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
           anchor: "#contact",
           card: false,
-          background: ''
+          background: '',
+          active: false
         },
         {
           name: "cardQuarto",
@@ -130,7 +135,8 @@ export default {
           text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
           anchor: "#contact",
           card: false,
-          background: ''
+          background: '',
+          active: false
         },
         {
           name: "cardCozinha",
@@ -138,7 +144,8 @@ export default {
           text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
           anchor: "#contact",
           card: false,
-          background:''
+          background:'',
+          active: false
   },
         {
           name: "cardEscritório",
@@ -146,11 +153,13 @@ export default {
           text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
           anchor: "#contact",
           card: false,
-          background: ''
+          background: '',
+          active: false
         },
       ],
       logo: `${new URL("../../assets/images/logo.png", import.meta.url)}`,
       heroBackground: `${new URL('../../assets/heroCards/background.jpg', import.meta.url)}`,
+      hovering: false,
     };
   },
   methods: {
@@ -184,17 +193,19 @@ export default {
 .headerContainer nav {
   display: flex;
   justify-content: space-between;
-  width: 100vw;
+  margin: 0 auto;
+  max-width: 1300px;
   height: 20vh;
 }
 .tabStyle {
-  min-height: 7vh;
-  margin-right: 10vw;
-  margin-top: 7vh;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 .logo {
-  margin-left: 10vw;
-  margin-top: 7vh;
+display: flex;
+align-items: center;
+justify-content: flex-start;
 }
 .titleContainer {
   box-sizing: border-box;
@@ -203,7 +214,7 @@ export default {
   justify-content: flex-end;
   align-items: center;
   height: 33vh;
-  width: 50vw;
+  max-width: 90em;
   margin: 0 auto;
 }
 .titleContent {
@@ -213,8 +224,9 @@ export default {
   width: 100%;
 }
 .titleContent div > h1 {
-  font-size: 3vh;
+  font-size: 1.8em;
   color: white;
+  font-family: Arboria-Bold, sans-serif;
 }
 .titleContent div > h1 > span {
   color: rgba(255, 255, 255, 0.47);
@@ -226,7 +238,7 @@ export default {
   margin-bottom: 17px;
   margin-right: 21px;
   margin-left: 21px;
-  width: 20vw;
+  width: 100%;
 }
 
 .contactContainer {
@@ -238,7 +250,7 @@ export default {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  width: 60vw;
+  width: 100%;
   color: white;
   height: 100%;
   display: flex;

@@ -4,22 +4,22 @@
     v-for="(item, i) in tabs" :key="i"
     style="background-color: transparent"
   >
-    <v-hover
-      v-slot="{ isHovering, props }"
-    >
       <v-card-item
         class="portfolioItem"
-        v-bind="props"
+        @mouseover="tabHover(item)"
+        @mouseleave="tabLeave(item)"
       >
         <div
           class="cardTab"
         >{{ item.title }}
         </div>
+        <div class="cardFooter"/>
         <v-expand-transition>
-          <div class="transition-fast-in-low-out v-card--reveal" v-if="isHovering">
+          <div
+            v-if="item.active"
+            class="transition-fast-in-low-out v-card--reveal" >
             <v-card-item
               class="portfolioItemExpanded"
-              style="height: 30vh; padding: 0.5em "
               @mouseover.once="setBackground(item)"
             >
               <div>
@@ -34,7 +34,6 @@
                 <v-btn
                   class="cardButton"
                   :to="{name: item.path, hash: item.anchor}"
-                  style="font-size: 1.6vh; padding: 1vh; height: 100%; margin-bottom: 1vh"
                 >
                   contato
                 </v-btn>
@@ -43,7 +42,6 @@
           </div>
         </v-expand-transition>
       </v-card-item>
-    </v-hover>
   </v-card>
 </template>
 <script>
@@ -55,7 +53,7 @@ export default {
   },
   data() {
     return{
-
+    active: false,
     }
   },
   methods: {
@@ -63,40 +61,53 @@ export default {
     const background = item.background
     this.$emit('background', background)
     },
+    tabHover(item) {
+      item.active = true
+    },
+    tabLeave(item) {
+      item.active = false
+    },
   },
-  computed: {}
+  computed: {},
+  mounted() {
+    console.log(11111, this.active)
+  }
 }
 </script>
 <style scoped>
 .portfolioItemExpanded {
-  font-size: 2.2vh;
-  padding: 1vw;
+  font-size: 2.2em;
+  padding: 0.5em;
   margin: 0 auto;
   box-sizing: border-box;
-  width: 12vw;
   height: 100%;
   background-color: #341818;
   cursor: pointer;
+  border: 0.5px transparent;
 
 }
+.cardFooter {
+  background-color: #341818;
+  height: 0.7em;
+  margin-top: 16vh;
+}
 .portfolioItem {
+  margin-top: 7vh;
+  min-width: 15em;
   color: white;
   padding: 0;
-  min-width: 12vw;
-  height: 5vh;
-  margin-top: 10vh;
-  margin-right: 2vw ;
-  margin-left: 2vw ;
+  height: 30vh;
   cursor: pointer;
+  border: 0.5px transparent;
 }
 .v-card--reveal {
-  height: 100%;
+  margin-top: 10em;
   padding: 0;
-  width: 12vw;
   bottom: 0;
   box-sizing: border-box;
-  justify-content: flex-start;
+  justify-content: space-between;
   position: absolute;
+  border: 1px transparent;
 }
 .cardButton {
   width: 100%;
@@ -109,21 +120,23 @@ export default {
   margin-top: 1vh;
   justify-content: flex-start;
   align-items: center;
-  font-size: 1.7vh;
+  font-size: 0.6em;
   height: 3.5vh !important;
-  line-height: 2vh
+  line-height: 2vh;
+  font-family: Arboria-Bold, sans-serif;
 }
 .cardText {
   text-align: left;
-  font-size: 1.6vh;
+  font-size: 0.5em;
   height: 16vh;
-  line-height: 2.3vh !important;
+  line-height: 1.2em !important;
+  font-family: Arboria-Light, sans-serif;
 }
 .cardTab {
   word-wrap:  normal;
   padding: 1vh;
   text-align: center;
-  font-size: 2.4vh;
-  min-width: 12vw;
+  font-size: 1.4em;
+  font-family: Arboria-Bold, sans-serif;
 }
 </style>
