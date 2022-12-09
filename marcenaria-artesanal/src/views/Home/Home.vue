@@ -20,11 +20,11 @@
     </div>
     <div class="titleContainer">
       <div class="titleContent">
-        <div CLASS="separator" />
+        <div class="separator" />
         <div class="text-no-wrap">
           <h1>MARCENARIA <span>ARTESANAL</span></h1>
         </div>
-        <div CLASS="separator" />
+        <div class="separator"/>
       </div>
       <div
         v-if="!$vuetify.display.xs && !$vuetify.display.sm"
@@ -126,7 +126,8 @@ export default {
           text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
           anchor: "#contact",
           card: false,
-          background: ''
+          background: '',
+          active: false
         },
         {
           name: "cardQuarto",
@@ -134,7 +135,8 @@ export default {
           text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
           anchor: "#contact",
           card: false,
-          background: ''
+          background: '',
+          active: false
         },
         {
           name: "cardCozinha",
@@ -142,7 +144,8 @@ export default {
           text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
           anchor: "#contact",
           card: false,
-          background:''
+          background:'',
+          active: false
   },
         {
           name: "cardEscritório",
@@ -150,7 +153,8 @@ export default {
           text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
           anchor: "#contact",
           card: false,
-          background: ''
+          background: '',
+          active: false
         },
       ],
       logo: `${new URL("../../assets/images/logo.png", import.meta.url)}`,
@@ -210,9 +214,8 @@ justify-content: flex-start;
   justify-content: flex-end;
   align-items: center;
   height: 33vh;
-  max-width: 70em;
+  max-width: 90em;
   margin: 0 auto;
-  background-color: black;
 }
 .titleContent {
   display: flex;
@@ -221,8 +224,9 @@ justify-content: flex-start;
   width: 100%;
 }
 .titleContent div > h1 {
-  font-size: 1.6em;
+  font-size: 1.8em;
   color: white;
+  font-family: Arboria-Bold, sans-serif;
 }
 .titleContent div > h1 > span {
   color: rgba(255, 255, 255, 0.47);

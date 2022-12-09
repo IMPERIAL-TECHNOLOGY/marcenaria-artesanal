@@ -8,7 +8,7 @@
       <div class="header" v-for="(tab, i) in tabs" :key="i">
         <v-tab
             v-bind="$props"
-            style="color: white ;font-size: 1.2em; font-family: Arboria-Bold, sans-serif"
+            style="color: white ;font-size: 1.3em; font-family: Arboria-Bold, sans-serif"
             right
             :to="{name: tab.path, hash: tab.anchor}"
         >
