@@ -1,47 +1,10 @@
 <template>
-  <div
-    class="headerContainer"
-    :style="{ backgroundImage: `url(${heroBackground})` }"
-  >
-    <div
-      v-if="!$vuetify.display.xs && !$vuetify.display.sm"
-      class="navContainer"
-    >
-      <nav>
-        <v-img
-          :src="logo"
-          alt="Marcenaria artesanal logo"
-          class="logo"
-          max-width="200px"
-          min-width="150px"
-        />
-        <TabsNavegation :tabs="tabs" class="tabStyle" />
-      </nav>
-    </div>
-    <div class="titleContainer">
-      <div class="titleContent">
-        <div class="separator" />
-        <div class="text-no-wrap">
-          <h1>MARCENARIA <span>ARTESANAL</span></h1>
-        </div>
-        <div class="separator"/>
-      </div>
-      <div
-        v-if="!$vuetify.display.xs && !$vuetify.display.sm"
-        class="portfolioTabs"
-      >
-        <TabCards
-          :tabs="portifolioTabs"
-          @background="changeBackground"
-          @hovering="hovering"
-        />
-      </div>
-    </div>
-  </div>
+  <section id="hero">
+    <Hero />
+  </section>
   <section id="history">
     <History class="historyContainer" />
   </section>
-
   <section id="contact">
     <Contact class="contactContainer" />
   </section>
@@ -93,6 +56,7 @@ import HomeCarousel from "@/views/Home/Components/Carousel/HomeCarousel";
 import FooterVue from "@/components/Footer/FooterVue.vue";
 import History from "@/views/Home/Components/History/History";
 import Contact from "./Components/Contact/Contact.vue";
+import Hero from "@/views/Home/Components/Hero/Hero.vue";
 export default {
   name: "Home",
   components: {
@@ -102,6 +66,7 @@ export default {
     FooterVue,
     History,
     Contact,
+    Hero,
   },
   data() {
     return {
@@ -126,8 +91,8 @@ export default {
           text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
           anchor: "#contact",
           card: false,
-          background: '',
-          active: false
+          background: "",
+          active: false,
         },
         {
           name: "cardQuarto",
@@ -135,8 +100,8 @@ export default {
           text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
           anchor: "#contact",
           card: false,
-          background: '',
-          active: false
+          background: "",
+          active: false,
         },
         {
           name: "cardCozinha",
@@ -144,35 +109,50 @@ export default {
           text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
           anchor: "#contact",
           card: false,
-          background:'',
-          active: false
-  },
+          background: "",
+          active: false,
+        },
         {
           name: "cardEscritório",
           title: "ESCRITÓRIO",
           text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
           anchor: "#contact",
           card: false,
-          background: '',
-          active: false
+          background: "",
+          active: false,
         },
       ],
       logo: `${new URL("../../assets/images/logo.png", import.meta.url)}`,
-      heroBackground: `${new URL('../../assets/heroCards/background.jpg', import.meta.url)}`,
+      heroBackground: `${new URL(
+        "../../assets/heroCards/background.jpg",
+        import.meta.url
+      )}`,
       hovering: false,
     };
   },
   methods: {
     changeBackground(background) {
-      this.heroBackground = background
-    }
+      this.heroBackground = background;
+    },
   },
   mounted() {
-    this.portifolioTabs[0].background = `${new URL('../../assets/heroCards/background4.jpg', import.meta.url)}`
-    this.portifolioTabs[1].background = `${new URL('../../assets/heroCards/background3.jpg', import.meta.url)}`
-    this.portifolioTabs[2].background = `${new URL('../../assets/heroCards/background2.jpg', import.meta.url)}`
-    this.portifolioTabs[3].background = `${new URL('../../assets/heroCards/background.jpg', import.meta.url)}`
-  }
+    this.portifolioTabs[0].background = `${new URL(
+      "../../assets/heroCards/background4.jpg",
+      import.meta.url
+    )}`;
+    this.portifolioTabs[1].background = `${new URL(
+      "../../assets/heroCards/background3.jpg",
+      import.meta.url
+    )}`;
+    this.portifolioTabs[2].background = `${new URL(
+      "../../assets/heroCards/background2.jpg",
+      import.meta.url
+    )}`;
+    this.portifolioTabs[3].background = `${new URL(
+      "../../assets/heroCards/background.jpg",
+      import.meta.url
+    )}`;
+  },
 };
 </script>
 <style scoped>
@@ -203,9 +183,9 @@ export default {
   align-items: center;
 }
 .logo {
-display: flex;
-align-items: center;
-justify-content: flex-start;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 }
 .titleContainer {
   box-sizing: border-box;
