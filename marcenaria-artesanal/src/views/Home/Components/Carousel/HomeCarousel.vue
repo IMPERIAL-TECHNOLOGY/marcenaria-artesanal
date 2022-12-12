@@ -8,26 +8,27 @@
     show-arrows="hover"
   >
     <template v-for="(item, index) in carouselItems">
-      <v-carousel-item
-        v-if="(index + 1) % columns === 1 || columns === 1"
-        :key="index"
-      >
-        <v-row class="flex-nowrap" style="height: 100%; margin: 0 -22px">
-          <template v-for="(n, i) in columns">
-            <template @click="openDialog(item)" v-if="+index + i < carouselItems.length">
-              <v-col :key="i">
-                <v-sheet
-                  v-if="+index + i < carouselItems.length"
-                  class="carouselItem"
-                >
-                  <v-img
-                    height="60%"
-                    :src="carouselItems[+index + i].image"
-                    :alt="carouselItems[+index + i].description"
-                    cover
-                  />
-                  <h1
-                    style="
+      <div @click="openDialog(item)">
+        <v-carousel-item
+          v-if="(index + 1) % columns === 1 || columns === 1"
+          :key="index"
+        >
+          <v-row class="flex-nowrap" style="height: 100%; margin: 0 -22px">
+            <template v-for="(n, i) in columns">
+              <template v-if="+index + i < carouselItems.length">
+                <v-col :key="i">
+                  <v-sheet
+                    v-if="+index + i < carouselItems.length"
+                    class="carouselItem"
+                  >
+                    <v-img
+                      height="60%"
+                      :src="carouselItems[+index + i].image"
+                      :alt="carouselItems[+index + i].description"
+                      cover
+                    />
+                    <h1
+                      style="
                       height: 40px;
                       font-size: 20px;
                       margin-top: 20px;
@@ -38,11 +39,11 @@
                         margin-top: 21px;
                       }
                     "
-                  >
-                    Lorem ipsum
-                  </h1>
-                  <h4
-                    style="
+                    >
+                      Lorem ipsum
+                    </h1>
+                    <h4
+                      style="
                       height: 15vh;
                       font-size: 15px;
                       font-family: Arboria-Light;
@@ -53,24 +54,25 @@
                         margin-top: 14px;
                       }
                     "
-                  >
-                    {{ carouselItems[+index + i].description }}
-                  </h4>
-                </v-sheet>
-              </v-col>
+                    >
+                      {{ carouselItems[+index + i].description }}
+                    </h4>
+                  </v-sheet>
+                </v-col>
+              </template>
             </template>
-          </template>
-        </v-row>
-      </v-carousel-item>
+          </v-row>
+        </v-carousel-item>
+      </div>
     </template>
+    <ImageModal
+      v-if="dialog"
+      :value="dialog"
+      :src="src"
+      @input="closeDialog"
+      width="700px"
+    />
   </v-carousel>
-  <ImageModal
-    v-if="dialog"
-    :value="dialog"
-    :src="imgModal"
-    @input="closeDialog"
-    width="670px"
-  />
 </template>
 <script>
 import ImageModal from "@/views/Home/Components/Carousel/ImageModal";
@@ -156,7 +158,7 @@ export default {
         },
       ],
       dialog: false,
-      imgModal: '',
+      src: '',
       actionsWidth: 100,
     };
   },
@@ -178,8 +180,8 @@ export default {
     },
     openDialog(item) {
       this.dialog = true;
-      this.imgModal = item.image;
-      console.log(111111111, this.imgModal)
+      this.src = item.image;
+      console.log(111111111, this.src)
     },
   },
   mounted() {

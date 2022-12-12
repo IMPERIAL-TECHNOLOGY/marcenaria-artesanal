@@ -45,9 +45,9 @@
       </v-btn>
     </div>
     <div class="modalContainer">
-      <v-img
+      <img
       :src="src"
-      cover
+      style="width: 100%"
        />
     </div>
     <slot />
@@ -68,6 +68,9 @@ export default {
     closeDialog() {
       this.$emit('input', null);
     },
+    mounted() {
+      console.log(this.src)
+    }
   },
 };
 </script>
