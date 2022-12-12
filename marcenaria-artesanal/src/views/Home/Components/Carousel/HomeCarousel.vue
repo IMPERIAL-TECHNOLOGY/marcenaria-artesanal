@@ -14,14 +14,13 @@
       >
         <v-row class="flex-nowrap" style="height: 100%; margin: 0 -22px">
           <template v-for="(n, i) in columns">
-            <template v-if="+index + i < carouselItems.length">
+            <template @click="openDialog(item)" v-if="+index + i < carouselItems.length">
               <v-col :key="i">
                 <v-sheet
                   v-if="+index + i < carouselItems.length"
                   class="carouselItem"
                 >
                   <v-img
-                    @click="openDialog(item)"
                     height="60%"
                     :src="carouselItems[+index + i].image"
                     :alt="carouselItems[+index + i].description"
@@ -68,23 +67,24 @@
   <ImageModal
     v-if="dialog"
     :value="dialog"
-    :serviceData="serviceData"
+    :src="imgModal"
     @input="closeDialog"
     width="670px"
   />
 </template>
 <script>
 import ImageModal from "@/views/Home/Components/Carousel/ImageModal";
+import {loadFonts} from "@/plugins/webfontloader";
 export default {
   name: "Home",
   components: {ImageModal},
   data() {
     return {
-      logo: `${new URL("../../../../assets/images/logo.png", import.meta.url)}`,
+      logo: `${new URL("@/assets/images/logo.png", import.meta.url)}`,
       carouselItems: [
         {
           image: `${new URL(
-            "../../../../assets/carousel/image1.png",
+            "@/assets/carousel/image1.png",
             import.meta.url
           )}`,
           description:
@@ -92,7 +92,7 @@ export default {
         },
         {
           image: `${new URL(
-            "../../../../assets/carousel/image2.png",
+            "@/assets/carousel/image2.png",
             import.meta.url
           )}`,
           description:
@@ -100,7 +100,7 @@ export default {
         },
         {
           image: `${new URL(
-            "../../../../assets/carousel/image3.png",
+            "@/assets/carousel/image3.png",
             import.meta.url
           )}`,
           description:
@@ -108,7 +108,7 @@ export default {
         },
         {
           image: `${new URL(
-            "../../../../assets/carousel/image4.png",
+            "@/assets/carousel/image4.png",
             import.meta.url
           )}`,
           description:
@@ -116,7 +116,7 @@ export default {
         },
         {
           image: `${new URL(
-            "../../../../assets/carousel/image5.png",
+            "@/assets/carousel/image5.png",
             import.meta.url
           )}`,
           description:
@@ -124,7 +124,7 @@ export default {
         },
         {
           image: `${new URL(
-            "../../../../assets/carousel/image6.png",
+            "@/assets/carousel/image6.png",
             import.meta.url
           )}`,
           description:
@@ -132,7 +132,7 @@ export default {
         },
         {
           image: `${new URL(
-            "../../../../assets/carousel/image7.png",
+            "@/assets/carousel/image7.png",
             import.meta.url
           )}`,
           description:
@@ -140,7 +140,7 @@ export default {
         },
         {
           image: `${new URL(
-            "../../../../assets/carousel/image8.png",
+            "@/assets/carousel/image8.png",
             import.meta.url
           )}`,
           description:
@@ -148,7 +148,7 @@ export default {
         },
         {
           image: `${new URL(
-            "../../../../assets/carousel/image9.png",
+            "@/assets/carousel/image9.png",
             import.meta.url
           )}`,
           description:
@@ -156,7 +156,7 @@ export default {
         },
       ],
       dialog: false,
-      imgModal: {},
+      imgModal: '',
       actionsWidth: 100,
     };
   },
@@ -178,7 +178,8 @@ export default {
     },
     openDialog(item) {
       this.dialog = true;
-      this.imgModal = item;
+      this.imgModal = item.image;
+      console.log(111111111, this.imgModal)
     },
   },
   mounted() {
