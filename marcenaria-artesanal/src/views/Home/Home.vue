@@ -3,7 +3,7 @@
     <Hero />
   </section>
   <section id="history">
-    <History class="historyContainer" />
+    <History />
   </section>
   <section id="contact">
     <Contact class="contactContainer" />
@@ -69,174 +69,11 @@ export default {
     Hero,
   },
   data() {
-    return {
-      tabs: [
-        {
-          name: "HISTÓRIA",
-          anchor: "#history",
-        },
-        {
-          name: "PROJETOS",
-          anchor: "#portifolio",
-        },
-        {
-          name: "CONTATO",
-          anchor: "#contact",
-        },
-      ],
-      portifolioTabs: [
-        {
-          name: "cardSala",
-          title: "SALA",
-          text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-          anchor: "#contact",
-          card: false,
-          background: "",
-          active: false,
-        },
-        {
-          name: "cardQuarto",
-          title: "QUARTO",
-          text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-          anchor: "#contact",
-          card: false,
-          background: "",
-          active: false,
-        },
-        {
-          name: "cardCozinha",
-          title: "COZINHA",
-          text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-          anchor: "#contact",
-          card: false,
-          background: "",
-          active: false,
-        },
-        {
-          name: "cardEscritório",
-          title: "ESCRITÓRIO",
-          text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-          anchor: "#contact",
-          card: false,
-          background: "",
-          active: false,
-        },
-      ],
-      logo: `${new URL("../../assets/images/logo.png", import.meta.url)}`,
-      heroBackground: `${new URL(
-        "../../assets/heroCards/background.jpg",
-        import.meta.url
-      )}`,
-      hovering: false,
-    };
-  },
-  methods: {
-    changeBackground(background) {
-      this.heroBackground = background;
-    },
-  },
-  mounted() {
-    this.portifolioTabs[0].background = `${new URL(
-      "../../assets/heroCards/background4.jpg",
-      import.meta.url
-    )}`;
-    this.portifolioTabs[1].background = `${new URL(
-      "../../assets/heroCards/background3.jpg",
-      import.meta.url
-    )}`;
-    this.portifolioTabs[2].background = `${new URL(
-      "../../assets/heroCards/background2.jpg",
-      import.meta.url
-    )}`;
-    this.portifolioTabs[3].background = `${new URL(
-      "../../assets/heroCards/background.jpg",
-      import.meta.url
-    )}`;
+    return {};
   },
 };
 </script>
 <style scoped>
-.headerContainer {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: space-between;
-  height: 100vh;
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  transition: background-image 0.4s ease-in-out;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-attachment: fixed;
-  background-size: cover;
-}
-.headerContainer nav {
-  display: flex;
-  justify-content: space-between;
-  margin: 0 auto;
-  max-width: 1300px;
-  height: 20vh;
-}
-.tabStyle {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-}
-.logo {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-}
-.titleContainer {
-  box-sizing: border-box;
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: flex-end;
-  align-items: center;
-  height: 33vh;
-  max-width: 90em;
-  margin: 0 auto;
-}
-.titleContent {
-  display: flex;
-  justify-content: center;
-  flex-flow: row nowrap;
-  width: 100%;
-}
-.titleContent div > h1 {
-  font-size: 1.8em;
-  color: white;
-  font-family: Arboria-Bold, sans-serif;
-}
-.titleContent div > h1 > span {
-  color: rgba(255, 255, 255, 0.47);
-  text-wrap: none;
-}
-.separator {
-  border-bottom: 2px groove white;
-  box-sizing: border-box;
-  margin-bottom: 17px;
-  margin-right: 21px;
-  margin-left: 21px;
-  width: 100%;
-}
-
-.contactContainer {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-}
-.portfolioTabs {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  width: 100%;
-  color: white;
-  height: 100%;
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: space-around;
-}
 .portifolioContainer {
   box-sizing: border-box;
   display: flex;
