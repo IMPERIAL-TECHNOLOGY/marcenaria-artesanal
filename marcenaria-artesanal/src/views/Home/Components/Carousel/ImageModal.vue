@@ -45,10 +45,7 @@
       </v-btn>
     </div>
     <div class="modalContainer">
-      <img
-      :src="src"
-      style="width: 100%"
-       />
+      <p style="width: 100%; background-color: pink">{{this.src}}</p>
     </div>
     <slot />
   </v-dialog>

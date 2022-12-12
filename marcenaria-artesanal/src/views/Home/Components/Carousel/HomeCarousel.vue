@@ -70,7 +70,7 @@
       :value="dialog"
       :src="src"
       @input="closeDialog"
-      width="700px"
+      width="700"
     />
   </v-carousel>
 </template>
