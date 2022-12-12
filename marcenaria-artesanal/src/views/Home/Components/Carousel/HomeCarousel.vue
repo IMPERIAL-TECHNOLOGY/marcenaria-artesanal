@@ -21,6 +21,7 @@
                   class="carouselItem"
                 >
                   <v-img
+                    @click="openDialog(item)"
                     height="60%"
                     :src="carouselItems[+index + i].image"
                     :alt="carouselItems[+index + i].description"
@@ -64,11 +65,19 @@
       </v-carousel-item>
     </template>
   </v-carousel>
+  <ImageModal
+    v-if="dialog"
+    :value="dialog"
+    :serviceData="serviceData"
+    @input="closeDialog"
+    width="670px"
+  />
 </template>
 <script>
+import ImageModal from "@/views/Home/Components/Carousel/ImageModal";
 export default {
   name: "Home",
-  components: {},
+  components: {ImageModal},
   data() {
     return {
       logo: `${new URL("../../../../assets/images/logo.png", import.meta.url)}`,
@@ -146,6 +155,9 @@ export default {
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
         },
       ],
+      dialog: false,
+      imgModal: {},
+      actionsWidth: 100,
     };
   },
   computed: {
@@ -159,6 +171,22 @@ export default {
 
       return 3;
     },
+  },
+  methods: {
+    closeDialog() {
+      this.dialog = false;
+    },
+    openDialog(item) {
+      this.dialog = true;
+      this.imgModal = item;
+    },
+  },
+  mounted() {
+    const actionSlots = this.$refs.actionSlot;
+    if (actionSlots && actionSlots.length) {
+      const actionSlot = actionSlots[0];
+      this.actionsWidth = actionSlot.offsetWidth;
+    }
   },
 };
 </script>
