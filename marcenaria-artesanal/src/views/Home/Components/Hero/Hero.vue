@@ -11,19 +11,13 @@
         class="hero-close-menu-icon-mobile item-hidden"
         v-on:click="openMenu"
       />
-      <div class="hero-mobile-menu item-hidden">
-        <ul class="hero-nav-items">
-          <li>
-            <button v-on:click="scrollTo('history')">História</button>
-          </li>
-          <li>
-            <button v-on:click="scrollTo('contact')">Contato</button>
-          </li>
-          <li>
-            <button v-on:click="scrollTo('portifolio')">Projetos</button>
-          </li>
-        </ul>
-      </div>
+        <div class="hero-mobile-menu item-hidden">
+          <ul class="hero-nav-items">
+            <li v-for="(item, index) in menuMobile" key="index">
+              <button v-on:click="scrollTo(item.anchor)">{{ item.tab }}</button>
+            </li>
+          </ul>
+        </div>
       <img :src="logo" class="hero-nav-icon-desktop" />
     </div>
     <img :src="logo" class="hero-logo-mobile" />
@@ -147,6 +141,20 @@ export default {
           active: false,
         },
       ],
+      menuMobile: [
+        {tab:'História',
+         anchor: 'history'
+        },
+        {tab:'Portfólio',
+         anchor: 'portifolio'
+        },
+        {tab:'Contato',
+         anchor: 'contact'
+        },
+        {tab:'Home',
+         anchor: 'hero'
+        },
+      ],
       heroBackground: `${new URL('../../../../assets/heroCards/background.jpg', import.meta.url)}`,
       hovering: false,
     };
@@ -199,15 +207,17 @@ export default {
 .hero-container {
   height: 100vh;
   width: 100vw;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("../../../../assets/heroCards/background.jpg") no-repeat fixed
-      center;
+  background-image: url("../../../../assets/heroCards/background.jpg");
   background-size: cover;
 }
 .hero-open-menu-icon-mobile {
   height: 30px;
   color: white;
-  position: absolute;
+  opacity: 0.7;
+  background-color: rgba(0, 0, 0, 0.19);
+  border-radius: 7px;
+  padding: 0.1em;
+  position: fixed;
   right: 25px;
   top: 25px;
   z-index: 1000;
@@ -215,14 +225,14 @@ export default {
 .hero-close-menu-icon-mobile {
   height: 30px;
   color: white;
-  position: absolute;
+  position: fixed;
   right: 25px;
   top: 25px;
   z-index: 1000;
 }
 .hero-mobile-menu {
-  transition: 1s;
-  position: absolute;
+  transition: 5s;
+  position: fixed;
   top: 0px;
   right: 0px;
   background-color: rgba(0, 0, 0, 0.6);

@@ -6,8 +6,8 @@
   >
       <v-card-item
         class="portfolioItem"
-        @mouseover="tabHover(item)"
-        @mouseleave="tabLeave(item)"
+        @mouseover.stop="tabHover(item)"
+        @mouseleave.stop="tabLeave(item)"
       >
         <div
           class="cardTab"
