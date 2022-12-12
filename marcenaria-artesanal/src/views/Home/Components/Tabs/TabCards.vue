@@ -48,9 +48,11 @@
 export default {
   name: 'TabCards',
   components: {},
+  emits: ["background"],
   props: {
     tabs: Array
   },
+  inheritAttrs: false,
   data() {
     return{
     active: false,
@@ -69,9 +71,6 @@ export default {
     },
   },
   computed: {},
-  mounted() {
-    console.log(11111, this.active)
-  }
 }
 </script>
 <style scoped>

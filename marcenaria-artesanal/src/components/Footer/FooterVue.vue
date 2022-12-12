@@ -89,9 +89,9 @@
       <div class="footer-address">
         <h3>ENDEREÇOS</h3>
         <p>Rodovia Raimundo Antunes Soares, 2270 Votorantim - SP</p>
-        <P
+        <p
           >Av. Gisele Constantino, 1548 - 2º andar Pq. Bela Vista - Sorocaba -
-          SP</P
+          SP</p
         >
       </div>
     </div>
