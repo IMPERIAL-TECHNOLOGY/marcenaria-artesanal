@@ -14,7 +14,7 @@
         <div class="hero-mobile-menu item-hidden">
           <ul class="hero-nav-items">
             <li v-for="(item, index) in menuMobile" key="index">
-              <button v-on:click="scrollTo(item.anchor)">{{ item.tab }}</button>
+              <button style="cursor: pointer;" v-on:click="scrollTo(item.anchor)">{{ item.tab }}</button>
             </li>
           </ul>
         </div>
@@ -211,6 +211,7 @@ export default {
   background-size: cover;
 }
 .hero-open-menu-icon-mobile {
+  cursor: pointer;
   height: 30px;
   color: white;
   opacity: 0.7;
@@ -223,6 +224,7 @@ export default {
   z-index: 1000;
 }
 .hero-close-menu-icon-mobile {
+  cursor: pointer;
   height: 30px;
   color: white;
   position: fixed;
