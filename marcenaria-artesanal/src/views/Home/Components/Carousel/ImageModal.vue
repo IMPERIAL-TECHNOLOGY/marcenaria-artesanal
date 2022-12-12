@@ -54,11 +54,10 @@
   </v-dialog>
 </template>
 
-<script lang="ts">
-import ServicesApi, { Services } from '@/api/services.api';
+<script >
 
 export default {
-  name: 'ServicesDetailModal',
+  name: 'ImgModal',
   components: {},
   props: {
     value: Boolean,
