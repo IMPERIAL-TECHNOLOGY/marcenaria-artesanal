@@ -14,25 +14,25 @@
           style="z-index: 100; background-color: #341818"
           class="hero-mobile-menu"
         >
+          <font-awesome-icon
+            :icon="['fas', 'fa-x']"
+            class="hero-close-menu-icon-mobile"
+            @click="drawer = !drawer"
+          />
           <div class="menuContainer">
-            <font-awesome-icon
-              :icon="['fas', 'fa-x']"
-              class="hero-close-menu-icon-mobile"
-              @click="drawer = !drawer"
-            />
             <div class="containerIcons">
-              <div v-for="(item, index) in linkIcons" :key="index">
+              <div  v-for="(item, index) in linkIcons" :key="index">
                 <a :href="item.ref">
                   <font-awesome-icon
                     :icon="item.icon"
-                    class="footer-social-icons"
+                    class="footer-social-icons icons"
                   />
                 </a>
               </div>
             </div>
-            <div>
-              <ul class="hero-nav-items">
-                <li v-for="(item, index) in menuMobile" :key="index">
+            <div class="listContainer">
+              <ul>
+                <li class="hero-items" v-for="(item, index) in menuMobile" :key="index">
                   <button class="menuButtons" @click="scrollTo(item.anchor)">{{ item.tab }}</button>
                 </li>
               </ul>
@@ -240,6 +240,14 @@ export default {
   right: 25px;
   bottom: 25px;
 }
+.hero-open-menu-icon-mobile:hover {
+  transition: 0.7s;
+  background-color: rgba(0, 0, 0, 0.57);
+}
+.hero-open-menu-icon-mobile:focus {
+  transition: 0.7s;
+  background-color: rgba(0, 0, 0, 0.57);
+}
 .hero-close-menu-icon-mobile {
   cursor: pointer;
   height: 23px;
@@ -248,6 +256,14 @@ export default {
   right: 28px;
   bottom: 25px;
   z-index: 21;
+}
+.hero-close-menu-icon-mobile:hover {
+  transition: 0.7s;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+.hero-close-menu-icon-mobile:focus {
+  transition: 0.7s;
+  background-color: rgba(255, 255, 255, 0.15);
 }
 .hero-mobile-menu {
   position: fixed;
@@ -378,6 +394,11 @@ export default {
   cursor: pointer;
   font-family: Arboria-Light;
 }
+.menuButtons:focus {
+  transition: 0.5s;
+  background-color: rgba(255, 255, 255, 0.38);
+  border: 1px solid white;
+}
 .containerIcons {
   display: flex;
   flex-flow: row nowrap;
@@ -400,13 +421,36 @@ export default {
   flex-flow: column nowrap;
   height: 100%;
 }
-.linkContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 .navContainer {
   padding-left: 4em;
   padding-right: 4em;
+}
+.hero-items {
+  margin: 2em 0 2em 0;
+  color: white;
+  list-style: none;
+}
+.hero-items:hover {
+  transition: 0.7s;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+.hero-items:focus {
+  transition: 0.7s;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+.listContainer {
+  margin-top: 10em;
+  margin-left: 2em;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+.icons:hover {
+  transition: 0.7s;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+.icons:focus {
+  transition: 0.7s;
+  background-color: rgba(255, 255, 255, 0.15);
 }
 </style>
