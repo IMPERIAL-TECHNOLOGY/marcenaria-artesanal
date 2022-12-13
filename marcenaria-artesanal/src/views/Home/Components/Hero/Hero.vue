@@ -1,56 +1,48 @@
 <template>
-  <div v-if="$vuetify.display.xs" class="hero-container">
-    <div class="hero-nav-container">
-      <font-awesome-icon
-        :icon="['fas', 'fa-bars']"
-        class="hero-open-menu-icon-mobile"
-        v-on:click="openMenu"
-      />
-      <font-awesome-icon
-        :icon="['fas', 'fa-x']"
-        class="hero-close-menu-icon-mobile item-hidden"
-        v-on:click="openMenu"
-      />
-        <div class="hero-mobile-menu item-hidden">
+  <div v-if="$vuetify.display.xs || $vuetify.display.sm " class="hero-container">
+    <v-card style="z-index: 400;">
+      <div class="hero-nav-container">
+        <font-awesome-icon
+          :icon="['fas', 'fa-bars']"
+          class="hero-open-menu-icon-mobile"
+          @click="drawer = !drawer"
+        />
+        <v-navigation-drawer
+          location="right"
+          v-model="drawer"
+          width="250"
+          style="z-index: 100; background-color: #341818"
+          class="hero-mobile-menu"
+        >
+          <font-awesome-icon
+            :icon="['fas', 'fa-x']"
+            class="hero-close-menu-icon-mobile"
+            @click="drawer = !drawer"
+          />
           <div class="menuContainer">
-            <div>
-              <ul class="hero-nav-items">
-                <li v-for="(item, index) in menuMobile" key="index">
-                  <button class="menuButtons" v-on:click="scrollTo(item.anchor)">{{ item.tab }}</button>
+            <div class="containerIcons">
+              <div  v-for="(item, index) in linkIcons" :key="index">
+                <a :href="item.ref">
+                  <font-awesome-icon
+                    :icon="item.icon"
+                    class="footer-social-icons icons"
+                  />
+                </a>
+              </div>
+            </div>
+            <div class="listContainer">
+              <ul>
+                <li class="hero-items" v-for="(item, index) in menuMobile" :key="index">
+                  <button class="menuButtons" @click="scrollTo(item.anchor)">{{ item.tab }}</button>
                 </li>
               </ul>
             </div>
-            <div class="containerIcons">
-              <div>
-                <a href="https://pt-br.facebook.com/marcenariartesanal/">
-                  <font-awesome-icon
-                    :icon="['fab', 'fa-facebook-f']"
-                    class="footer-social-icons"
-                  />
-                </a>
-              </div>
-              <div>
-                <a href="https://www.instagram.com/marcenariaartesanal/?hl=en">
-                  <font-awesome-icon
-                    :icon="['fab', 'fa-instagram']"
-                    class="footer-social-icons"
-                  />
-                </a>
-              </div>
-              <div>
-                <a href="https://wa.me/message/YRG5PWGMPL73G1">
-                  <font-awesome-icon
-                    :icon="['fab', 'fa-whatsapp']"
-                    class="footer-social-icons"
-                  />
-                </a>
-              </div>
-            </div>
           </div>
-        </div>
-      <img :src="logo" class="hero-nav-icon-desktop" />
-    </div>
-    <img :src="logo" class="hero-logo-mobile" />
+        </v-navigation-drawer>
+        <img :src="logo" class="hero-nav-icon-desktop"/>
+      </div>
+    </v-card>
+    <img :src="logo" class="hero-logo-mobile"/>
   </div>
   <div
     v-else
@@ -58,9 +50,8 @@
     :style="{ backgroundImage: `url(${heroBackground})` }"
   >
     <div
-      class="navContainer"
     >
-      <nav>
+      <nav class="navContainer">
         <v-img
           :src="logo"
           alt="Marcenaria artesanal logo"
@@ -171,6 +162,7 @@ export default {
           active: false,
         },
       ],
+      drawer: null,
       menuMobile: [
         {tab:'HISTÓRIA',
          anchor: 'history'
@@ -187,6 +179,20 @@ export default {
       ],
       heroBackground: `${new URL('../../../../assets/heroCards/background.jpg', import.meta.url)}`,
       hovering: false,
+      linkIcons: [
+        {
+          ref:'https://pt-br.facebook.com/marcenariartesanal/',
+          icon: ['fab', 'fa-facebook-f']
+        },
+        {
+          ref:'https://www.instagram.com/marcenariaartesanal/?hl=en',
+          icon:['fab', 'fa-instagram']
+        },
+        {
+          ref: 'https://wa.me/message/YRG5PWGMPL73G1',
+          icon: ['fab', 'fa-whatsapp']
+        },
+      ]
     };
   },
   mounted() {
@@ -209,23 +215,6 @@ export default {
         behavior: "smooth",
       });
     },
-    openMenu() {
-      const iconClosed = document.querySelector(".hero-open-menu-icon-mobile");
-      const iconOpened = document.querySelector(".hero-close-menu-icon-mobile");
-      const menu = document.querySelector(".hero-mobile-menu");
-
-      if (this.menuOpen == false) {
-        iconClosed.classList.add("item-hidden");
-        iconOpened.classList.remove("item-hidden");
-        menu.classList.remove("item-hidden");
-        this.menuOpen = true;
-      } else {
-        iconClosed.classList.remove("item-hidden");
-        iconOpened.classList.add("item-hidden");
-        menu.classList.add("item-hidden");
-        this.menuOpen = false;
-      }
-    },
       changeBackground(background) {
         this.heroBackground = background
       }
@@ -243,14 +232,21 @@ export default {
 .hero-open-menu-icon-mobile {
   cursor: pointer;
   height: 25px;
-  color: white;
-  opacity: 0.7;
-  background-color: rgba(0, 0, 0, 0.19);
-  border-radius: 7px;
+  color: rgba(255, 255, 255, 0.66);
+  background-color: rgba(128, 128, 128, 0.29);
+  border-radius: 3px;
   padding: 0.1em;
   position: fixed;
   right: 25px;
-  top: 25px;
+  bottom: 25px;
+}
+.hero-open-menu-icon-mobile:hover {
+  transition: 0.7s;
+  background-color: rgba(0, 0, 0, 0.57);
+}
+.hero-open-menu-icon-mobile:focus {
+  transition: 0.7s;
+  background-color: rgba(0, 0, 0, 0.57);
 }
 .hero-close-menu-icon-mobile {
   cursor: pointer;
@@ -258,8 +254,16 @@ export default {
   color: rgba(255, 255, 255, 0.66);
   position: fixed;
   right: 28px;
-  top: 25px;
+  bottom: 25px;
   z-index: 21;
+}
+.hero-close-menu-icon-mobile:hover {
+  transition: 0.7s;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+.hero-close-menu-icon-mobile:focus {
+  transition: 0.7s;
+  background-color: rgba(255, 255, 255, 0.15);
 }
 .hero-mobile-menu {
   position: fixed;
@@ -268,12 +272,7 @@ export default {
   background-color: #341818;
   opacity: 0.95;
   height: 100vh;
-  width: 300px;
   z-index: 20;
-}
-.item-hidden {
-  display: none;
-  opacity: 0;
 }
 .hero-nav-items {
   padding: 90px 0 0px 0;
@@ -281,8 +280,9 @@ export default {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: left;
+  justify-content: center;
   list-style: none;
+  margin-top: 3em;
 }
 
 .hero-nav-items li {
@@ -394,13 +394,18 @@ export default {
   cursor: pointer;
   font-family: Arboria-Light;
 }
+.menuButtons:focus {
+  transition: 0.5s;
+  background-color: rgba(255, 255, 255, 0.38);
+  border: 1px solid white;
+}
 .containerIcons {
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
   padding-left: 20px;
   margin: 0 auto;
-  margin-bottom: 5em;
+  margin-top: 3em;
 }
 .footer-social-icons {
   color: rgba(255, 255, 255, 0.5);
@@ -414,7 +419,38 @@ export default {
 .menuContainer {
   display: flex;
   flex-flow: column nowrap;
-  justify-content: space-between;
   height: 100%;
+}
+.navContainer {
+  padding-left: 4em;
+  padding-right: 4em;
+}
+.hero-items {
+  margin: 2em 0 2em 0;
+  color: white;
+  list-style: none;
+}
+.hero-items:hover {
+  transition: 0.7s;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+.hero-items:focus {
+  transition: 0.7s;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+.listContainer {
+  margin-top: 10em;
+  margin-left: 2em;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+.icons:hover {
+  transition: 0.7s;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+.icons:focus {
+  transition: 0.7s;
+  background-color: rgba(255, 255, 255, 0.15);
 }
 </style>
