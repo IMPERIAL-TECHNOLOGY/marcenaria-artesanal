@@ -430,10 +430,6 @@ export default {
   color: white;
   list-style: none;
 }
-.hero-items:hover {
-  transition: 0.7s;
-  background-color: rgba(255, 255, 255, 0.15);
-}
 .hero-items:focus {
   transition: 0.7s;
   background-color: rgba(255, 255, 255, 0.15);
@@ -451,6 +447,7 @@ export default {
 }
 .icons:focus {
   transition: 0.7s;
+  padding: 0;
   background-color: rgba(255, 255, 255, 0.15);
 }
 </style>
