@@ -12,11 +12,41 @@
         v-on:click="openMenu"
       />
         <div class="hero-mobile-menu item-hidden">
-          <ul class="hero-nav-items">
-            <li v-for="(item, index) in menuMobile" key="index">
-              <button class="menuButtons" v-on:click="scrollTo(item.anchor)">{{ item.tab }}</button>
-            </li>
-          </ul>
+          <div class="menuContainer">
+            <div>
+              <ul class="hero-nav-items">
+                <li v-for="(item, index) in menuMobile" key="index">
+                  <button class="menuButtons" v-on:click="scrollTo(item.anchor)">{{ item.tab }}</button>
+                </li>
+              </ul>
+            </div>
+            <div class="containerIcons">
+              <div>
+                <a href="https://pt-br.facebook.com/marcenariartesanal/">
+                  <font-awesome-icon
+                    :icon="['fab', 'fa-facebook-f']"
+                    class="footer-social-icons"
+                  />
+                </a>
+              </div>
+              <div>
+                <a href="https://www.instagram.com/marcenariaartesanal/?hl=en">
+                  <font-awesome-icon
+                    :icon="['fab', 'fa-instagram']"
+                    class="footer-social-icons"
+                  />
+                </a>
+              </div>
+              <div>
+                <a href="https://wa.me/message/YRG5PWGMPL73G1">
+                  <font-awesome-icon
+                    :icon="['fab', 'fa-whatsapp']"
+                    class="footer-social-icons"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       <img :src="logo" class="hero-nav-icon-desktop" />
     </div>
@@ -363,5 +393,27 @@ export default {
 .menuButtons {
   cursor: pointer;
   font-family: Arboria-Light;
+}
+.containerIcons {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  margin: 0 auto;
+  margin-bottom: 5em;
+}
+.footer-social-icons {
+  color: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  padding: 8px 8px;
+  height: 18px;
+  width: 18px;
+  margin-right: 2em;
+}
+.menuContainer {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  height: 100%;
 }
 </style>
