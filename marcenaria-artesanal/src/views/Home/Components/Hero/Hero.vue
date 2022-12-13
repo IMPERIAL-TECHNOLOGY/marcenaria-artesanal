@@ -397,7 +397,8 @@ export default {
 .containerIcons {
   display: flex;
   flex-flow: row nowrap;
-  justify-content: flex-start;
+  justify-content: center;
+  padding-left: 20px;
   margin: 0 auto;
   margin-bottom: 5em;
 }
@@ -407,7 +408,7 @@ export default {
   border-radius: 50%;
   padding: 8px 8px;
   height: 18px;
-  width: 18px;
+  width: 20px;
   margin-right: 2em;
 }
 .menuContainer {
