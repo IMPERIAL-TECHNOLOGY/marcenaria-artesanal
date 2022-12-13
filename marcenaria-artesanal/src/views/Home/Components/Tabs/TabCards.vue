@@ -17,26 +17,31 @@
         <v-expand-transition>
           <div
             v-if="item.active"
-            class="transition-fast-in-low-out v-card--reveal" >
+            class="transition-fast-in-low-out v-card--reveal"
+          >
             <v-card-item
               class="portfolioItemExpanded"
               @mouseover.once="setBackground(item)"
             >
-              <div>
-                <v-card-title
-                  class="cardTitle"
-                >{{ item.title }}
-                </v-card-title>
-                <v-card-text
-                  class="cardText"
-                >{{ item.text }}
-                </v-card-text>
-                <v-btn
-                  class="cardButton"
-                  :to="{name: item.path, hash: item.anchor}"
-                >
-                  contato
-                </v-btn>
+              <div class="cardContainer">
+                <div class="cardTitle">
+                  <v-card-title
+                  >{{ item.title }}
+                  </v-card-title>
+                </div>
+                <div class="cardText">
+                  <v-card-text
+                  >{{ item.text }}
+                  </v-card-text>
+                </div>
+                <div class="buttonContainer">
+                  <v-btn
+                    class="cardButton"
+                    :to="{name: item.path, hash: item.anchor}"
+                  >
+                    <span style="color: white">SAIBA MAIS</span>
+                  </v-btn>
+                </div>
               </div>
             </v-card-item>
           </div>
@@ -78,12 +83,10 @@ export default {
   font-size: 2.2em;
   padding: 0.5em;
   margin: 0 auto;
-  box-sizing: border-box;
   height: 100%;
   background-color: #341818;
   cursor: pointer;
   border: 0.5px transparent;
-
 }
 .cardFooter {
   background-color: #341818;
@@ -92,40 +95,45 @@ export default {
 }
 .portfolioItem {
   margin-top: 7vh;
+  background-color: black;
   min-width: 15em;
   color: white;
   padding: 0;
   height: 30vh;
   cursor: pointer;
   border: 0.5px transparent;
+  position: relative;
 }
 .v-card--reveal {
+  height: 33vh;
   margin-top: 10em;
   padding: 0;
   bottom: 0;
-  box-sizing: border-box;
-  justify-content: space-between;
   position: absolute;
-  border: 1px transparent;
 }
 .cardButton {
-  width: 100%;
-  justify-content: center;
-  border: 0.5px white;
-  background-color: #341818;
+
+  width: 8em;
+  font-family: Arboria-Book, sans-serif;
+  border: 0.1em solid white;
+  background-color: transparent;
+}
+.cardButton:hover {
   color: white;
 }
 .cardTitle {
-  margin-top: 1vh;
-  justify-content: flex-start;
-  align-items: center;
+  background-color: #341818;
   font-size: 0.6em;
+  text-align: center;
   height: 3.5vh !important;
   line-height: 2vh;
   font-family: Arboria-Bold, sans-serif;
 }
 .cardText {
-  text-align: left;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
   font-size: 0.5em;
   height: 16vh;
   line-height: 1.2em !important;
@@ -136,6 +144,14 @@ export default {
   padding: 1vh;
   text-align: center;
   font-size: 1.4em;
-  font-family: Arboria-Bold, sans-serif;
+  font-family: Arboria-Light, sans-serif;
+}
+.cardContainer {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+}
+.buttonContainer {
+  margin: 0 auto;
 }
 </style>

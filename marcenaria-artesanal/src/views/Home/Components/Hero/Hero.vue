@@ -45,7 +45,7 @@
       <div class="titleContent">
         <div class="separator" />
         <div class="text-no-wrap">
-          <h1>MARCENARIA <span>ARTESANAL</span></h1>
+          <h1>MARCENARIA <span style="font-family: Arboria-Light">ARTESANAL</span></h1>
         </div>
         <div class="separator"/>
       </div>
