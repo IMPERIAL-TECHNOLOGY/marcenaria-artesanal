@@ -1,5 +1,5 @@
 <template>
-  <div v-if="$vuetify.display.xs" class="hero-container">
+  <div v-if="$vuetify.display.xs || $vuetify.display.sm " class="hero-container">
     <v-card style="z-index: 400;">
       <div class="hero-nav-container">
         <font-awesome-icon
@@ -50,9 +50,8 @@
     :style="{ backgroundImage: `url(${heroBackground})` }"
   >
     <div
-      class="navContainer"
     >
-      <nav>
+      <nav class="navContainer">
         <v-img
           :src="logo"
           alt="Marcenaria artesanal logo"
@@ -405,5 +404,9 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.navContainer {
+  padding-left: 4em;
+  padding-right: 4em;
 }
 </style>
