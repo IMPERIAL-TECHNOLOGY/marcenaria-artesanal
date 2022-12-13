@@ -14,7 +14,7 @@
         <div class="hero-mobile-menu item-hidden">
           <ul class="hero-nav-items">
             <li v-for="(item, index) in menuMobile" key="index">
-              <button style="cursor: pointer;" v-on:click="scrollTo(item.anchor)">{{ item.tab }}</button>
+              <button class="menuButtons" v-on:click="scrollTo(item.anchor)">{{ item.tab }}</button>
             </li>
           </ul>
         </div>
@@ -142,16 +142,16 @@ export default {
         },
       ],
       menuMobile: [
-        {tab:'História',
+        {tab:'HISTÓRIA',
          anchor: 'history'
         },
-        {tab:'Portfólio',
+        {tab:'PROJETOS',
          anchor: 'portifolio'
         },
-        {tab:'Contato',
+        {tab:'CONTATO',
          anchor: 'contact'
         },
-        {tab:'Home',
+        {tab:'HOME',
          anchor: 'hero'
         },
       ],
@@ -212,7 +212,7 @@ export default {
 }
 .hero-open-menu-icon-mobile {
   cursor: pointer;
-  height: 30px;
+  height: 25px;
   color: white;
   opacity: 0.7;
   background-color: rgba(0, 0, 0, 0.19);
@@ -221,23 +221,22 @@ export default {
   position: fixed;
   right: 25px;
   top: 25px;
-  z-index: 1000;
 }
 .hero-close-menu-icon-mobile {
   cursor: pointer;
-  height: 30px;
-  color: white;
+  height: 23px;
+  color: rgba(255, 255, 255, 0.66);
   position: fixed;
-  right: 25px;
+  right: 28px;
   top: 25px;
-  z-index: 1000;
+  z-index: 21;
 }
 .hero-mobile-menu {
-  transition: 5s;
   position: fixed;
   top: 0px;
   right: 0px;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: #341818;
+  opacity: 0.95;
   height: 100vh;
   width: 300px;
   z-index: 20;
@@ -245,7 +244,6 @@ export default {
 .item-hidden {
   display: none;
   opacity: 0;
-  transition: 2s ease-in;
 }
 .hero-nav-items {
   padding: 90px 0 0px 0;
@@ -361,5 +359,9 @@ export default {
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-around;
+}
+.menuButtons {
+  cursor: pointer;
+  font-family: Arboria-Light;
 }
 </style>

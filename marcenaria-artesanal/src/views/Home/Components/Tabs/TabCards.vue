@@ -95,16 +95,15 @@ export default {
 }
 .portfolioItem {
   margin-top: 7vh;
-  background-color: black;
   min-width: 15em;
   color: white;
   padding: 0;
-  height: 30vh;
+  height: 100%;
   cursor: pointer;
   border: 0.5px transparent;
-  position: relative;
 }
 .v-card--reveal {
+  transition: 0.4s;
   height: 33vh;
   margin-top: 10em;
   padding: 0;
