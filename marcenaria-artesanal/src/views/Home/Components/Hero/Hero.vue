@@ -33,7 +33,7 @@
             <div class="listContainer">
               <ul>
                 <li class="hero-items" v-for="(item, index) in menuMobile" :key="index">
-                  <button class="menuButtons" @click="scrollTo(item.anchor)">{{ item.tab }}</button>
+                  <button class="menuButtons" @click="scrollToDrawer(item.anchor)">{{ item.tab }}</button>
                 </li>
               </ul>
             </div>
@@ -208,6 +208,13 @@ export default {
   methods: {
     onResize() {
       this.windowWidth = window.innerWidth;
+    },
+    scrollToDrawer(section) {
+      this.drawer = !this.drawer
+      const element = document.getElementById(section);
+      element.scrollIntoView({
+        behavior: "smooth",
+      });
     },
     scrollTo(section) {
       this.drawer = !this.drawer

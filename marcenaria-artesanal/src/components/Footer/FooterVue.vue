@@ -58,10 +58,10 @@
       </div>
       <div class="footer-navigation">
         <h3>NAVEGAÇÃO</h3>
-        <a>HOME</a>
-        <a>NOSSA HISTÓRIA</a>
-        <a>PROJETOS</a>
-        <a>CONTATO</a>
+        <a @click="scrollTo('hero')">HOME</a>
+        <a @click="scrollTo('history')">NOSSA HISTÓRIA</a>
+        <a @click="scrollTo('portifolio')">PROJETOS</a>
+        <a @click="scrollTo('contact')">CONTATO</a>
       </div>
       <div class="footer-contact">
         <h3>CONTATO</h3>
@@ -111,6 +111,14 @@ export default {
       logo: `${new URL("../../assets/images/logo.png", import.meta.url)}`,
     };
   },
+  methods: {
+    scrollTo(section) {
+      const element = document.getElementById(section);
+      element.scrollIntoView({
+        behavior: "smooth",
+      });
+    },
+  }
 };
 </script>
 
