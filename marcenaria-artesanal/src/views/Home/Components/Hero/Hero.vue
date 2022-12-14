@@ -1,5 +1,5 @@
 <template>
-  <div v-if="$vuetify.display.xs || $vuetify.display.sm " class="hero-container">
+  <div v-if="$vuetify.display.xs || $vuetify.display.sm || $vuetify.display.md" class="hero-container">
     <v-card style="z-index: 400;">
       <div class="hero-nav-container">
         <font-awesome-icon
