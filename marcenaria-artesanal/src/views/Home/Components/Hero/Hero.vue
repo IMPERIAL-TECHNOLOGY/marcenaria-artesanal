@@ -210,6 +210,7 @@ export default {
       this.windowWidth = window.innerWidth;
     },
     scrollTo(section) {
+      this.drawer = !this.drawer
       const element = document.getElementById(section);
       element.scrollIntoView({
         behavior: "smooth",
