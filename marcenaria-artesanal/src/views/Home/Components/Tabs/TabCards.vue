@@ -25,8 +25,14 @@
               <div class="cardTitle">
                 <v-card-title>{{ item.title }} </v-card-title>
               </div>
-              <div class="cardText">
-                <v-card-text>{{ item.text }} </v-card-text>
+              <div
+                class="cardText"
+              >
+                <v-card-text
+                  style="font-family: Arboria-Light, sans-serif"
+                >
+                  {{ item.text }}
+                </v-card-text>
               </div>
               <div class="buttonContainer">
                 <v-btn
