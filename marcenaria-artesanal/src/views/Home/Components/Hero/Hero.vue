@@ -155,7 +155,7 @@ export default {
           anchor: "#contact",
           card: false,
           background: `${new URL(
-            "@/assets/heroCards/background2.jpg",
+            "@/assets/heroCards/background2.jpeg",
             import.meta.url
           )}`,
           active: false,
