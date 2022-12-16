@@ -210,15 +210,15 @@ export default {
   data() {
     return {
       img1: `${new URL(
-        "../../../../assets/history/img1.jpg",
+        "../../../../assets/history/img1.WebP",
         import.meta.url
       )}`,
       img2: `${new URL(
-        "../../../../assets/history/img2.jpg",
+        "../../../../assets/history/img2.WebP",
         import.meta.url
       )}`,
       img3: `${new URL(
-        "../../../../assets/history/img3.jpg",
+        "../../../../assets/history/img3.WebP",
         import.meta.url
       )}`,
       windowWidth: window.innerWidth,
@@ -243,11 +243,6 @@ export default {
 </script>
 
 <style lang="css" scoped>
-.hist-container {
-  width: 100%;
-  padding: 80px 5vw 30px 5vw;
-  margin: 0 auto;
-}
 .hist-bg-text {
   display: flex;
   height: 50px;

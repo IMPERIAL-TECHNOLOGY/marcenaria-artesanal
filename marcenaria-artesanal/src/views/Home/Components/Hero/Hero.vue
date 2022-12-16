@@ -108,7 +108,7 @@ export default {
     return {
       menuOpen: false,
       windowWidth: window.innerWidth,
-      logo: `${new URL("@/assets/images/logo.png", import.meta.url)}`,
+      logo: `${new URL("@/assets/images/logo.WebP", import.meta.url)}`,
       tabs: [
         {
           name: "HISTÓRIA",
@@ -131,7 +131,7 @@ export default {
           anchor: "#contact",
           card: false,
           background: `${new URL(
-            "@/assets/heroCards/background4.jpeg",
+            "@/assets/heroCards/background4.WebP",
             import.meta.url
           )}`,
           active: false,
@@ -143,7 +143,7 @@ export default {
           anchor: "#contact",
           card: false,
           background: `${new URL(
-            "@/assets/heroCards/background3.jpeg",
+            "@/assets/heroCards/background3.WebP",
             import.meta.url
           )}`,
           active: false,
@@ -155,7 +155,7 @@ export default {
           anchor: "#contact",
           card: false,
           background: `${new URL(
-            "@/assets/heroCards/background2.jpeg",
+            "@/assets/heroCards/background2.WebP",
             import.meta.url
           )}`,
           active: false,
@@ -167,7 +167,7 @@ export default {
           anchor: "#contact",
           card: false,
           background: `${new URL(
-            "@/assets/heroCards/background.jpg",
+            "@/assets/heroCards/background.WebP",
             import.meta.url
           )}`,
           active: false,
@@ -181,7 +181,7 @@ export default {
         { tab: "PROJETOS", anchor: "portifolio" },
       ],
       heroBackground: `${new URL(
-        "../../../../assets/heroCards/background.jpg",
+        "../../../../assets/heroCards/background.WebP",
         import.meta.url
       )}`,
       hovering: false,
@@ -241,7 +241,7 @@ export default {
   height: 100vh;
   width: 100vw;
   background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-    url("../../../../assets/images/contato-pic.jpeg") no-repeat fixed center;
+    url("../../../../assets/images/contato-pic.WebP") no-repeat fixed center;
   background-size: cover;
 }
 .hero-open-menu-icon-mobile {

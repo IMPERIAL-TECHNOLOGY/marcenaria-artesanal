@@ -129,7 +129,7 @@ export default {
     display: flex;
     justify-content: center;
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-      url("../../../../assets/images/contato-pic.jpeg") no-repeat fixed center;
+      url("../../../../assets/images/contato-pic.WebP") no-repeat fixed center;
     background-origin: content-box;
     background-repeat: no-repeat;
     background-position: center center;
