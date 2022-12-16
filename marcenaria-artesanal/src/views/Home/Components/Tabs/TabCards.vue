@@ -1,82 +1,76 @@
 <template>
   <v-card
     v-bind="$props"
-    v-for="(item, i) in tabs" :key="i"
+    v-for="(item, i) in tabs"
+    :key="i"
     style="background-color: transparent"
   >
-      <v-card-item
-        class="portfolioItem"
-        @mouseover.stop="tabHover(item)"
-        @mouseleave.stop="tabLeave(item)"
-      >
+    <v-card-item
+      class="portfolioItem"
+      @mouseover.stop="tabHover(item)"
+      @mouseleave.stop="tabLeave(item)"
+    >
+      <div class="cardTab">{{ item.title }}</div>
+      <div class="cardFooter" />
+      <v-expand-transition>
         <div
-          class="cardTab"
-        >{{ item.title }}
-        </div>
-        <div class="cardFooter"/>
-        <v-expand-transition>
-          <div
-            v-if="item.active"
-            class="transition-fast-in-low-out v-card--reveal"
+          v-if="item.active"
+          class="transition-fast-in-low-out v-card--reveal"
+        >
+          <v-card-item
+            class="portfolioItemExpanded"
+            @mouseover.once="setBackground(item)"
           >
-            <v-card-item
-              class="portfolioItemExpanded"
-              @mouseover.once="setBackground(item)"
-            >
-              <div class="cardContainer">
-                <div class="cardTitle">
-                  <v-card-title
-                  >{{ item.title }}
-                  </v-card-title>
-                </div>
-                <div class="cardText">
-                  <v-card-text
-                  >{{ item.text }}
-                  </v-card-text>
-                </div>
-                <div class="buttonContainer">
-                  <v-btn
-                    class="cardButton"
-                    :to="{name: item.path, hash: item.anchor}"
-                  >
-                    <span style="color: white">SAIBA MAIS</span>
-                  </v-btn>
-                </div>
+            <div class="cardContainer">
+              <div class="cardTitle">
+                <v-card-title>{{ item.title }} </v-card-title>
               </div>
-            </v-card-item>
-          </div>
-        </v-expand-transition>
-      </v-card-item>
+              <div class="cardText">
+                <v-card-text>{{ item.text }} </v-card-text>
+              </div>
+              <div class="buttonContainer">
+                <v-btn
+                  class="cardButton"
+                  :to="{ name: item.path, hash: item.anchor }"
+                >
+                  <span style="color: white">SAIBA MAIS</span>
+                </v-btn>
+              </div>
+            </div>
+          </v-card-item>
+        </div>
+      </v-expand-transition>
+    </v-card-item>
   </v-card>
 </template>
 <script>
 export default {
-  name: 'TabCards',
+  name: "TabCards",
   components: {},
   emits: ["background"],
   props: {
-    tabs: Array
+    tabs: Array,
   },
   inheritAttrs: false,
   data() {
-    return{
-    active: false,
-    }
+    return {
+      active: false,
+    };
   },
   methods: {
     setBackground(item) {
-    const background = item.background
-    this.$emit('background', background)
+      const background = item.background;
+      this.$emit("background", background);
     },
     tabHover(item) {
-      item.active = true
+      item.active = true;
     },
     tabLeave(item) {
-      item.active = false
+      item.active = false;
     },
   },
   computed: {},
-}
+};
 </script>
 <style scoped>
 .portfolioItemExpanded {
@@ -104,14 +98,13 @@ export default {
 }
 .v-card--reveal {
   transition: 0.4s;
-  height: 33vh;
+  height: 30vh;
   margin-top: 10em;
   padding: 0;
   bottom: 0;
   position: absolute;
 }
 .cardButton {
-
   width: 8em;
   font-family: Arboria-Book, sans-serif;
   border: 0.1em solid white;
@@ -139,7 +132,7 @@ export default {
   font-family: Arboria-Light, sans-serif;
 }
 .cardTab {
-  word-wrap:  normal;
+  word-wrap: normal;
   padding: 1vh;
   text-align: center;
   font-size: 1.4em;

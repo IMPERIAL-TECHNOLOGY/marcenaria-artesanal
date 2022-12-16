@@ -1,6 +1,9 @@
 <template>
-  <div v-if="$vuetify.display.xs || $vuetify.display.sm || $vuetify.display.md" class="hero-container">
-    <v-card style="z-index: 400;">
+  <div
+    v-if="$vuetify.display.xs || $vuetify.display.sm || $vuetify.display.md"
+    class="hero-container"
+  >
+    <v-card style="z-index: 400">
       <div class="hero-nav-container">
         <font-awesome-icon
           :icon="['fas', 'fa-bars']"
@@ -21,7 +24,7 @@
           />
           <div class="menuContainer">
             <div class="containerIcons">
-              <div  v-for="(item, index) in linkIcons" :key="index">
+              <div v-for="(item, index) in linkIcons" :key="index">
                 <a :href="item.ref">
                   <font-awesome-icon
                     :icon="item.icon"
@@ -32,25 +35,33 @@
             </div>
             <div class="listContainer">
               <ul>
-                <li class="hero-items" v-for="(item, index) in menuMobile" :key="index">
-                  <button class="menuButtons" @click="scrollToDrawer(item.anchor)">{{ item.tab }}</button>
+                <li
+                  class="hero-items"
+                  v-for="(item, index) in menuMobile"
+                  :key="index"
+                >
+                  <button
+                    class="menuButtons"
+                    @click="scrollToDrawer(item.anchor)"
+                  >
+                    {{ item.tab }}
+                  </button>
                 </li>
               </ul>
             </div>
           </div>
         </v-navigation-drawer>
-        <img :src="logo" class="hero-nav-icon-desktop"/>
+        <img :src="logo" class="hero-nav-icon-desktop" />
       </div>
     </v-card>
-    <img :src="logo" class="hero-logo-mobile"/>
+    <img :src="logo" class="hero-logo-mobile" />
   </div>
   <div
     v-else
     class="headerContainer"
     :style="{ backgroundImage: `url(${heroBackground})` }"
   >
-    <div
-    >
+    <div>
       <nav class="navContainer">
         <v-img
           :src="logo"
@@ -66,13 +77,13 @@
       <div class="titleContent">
         <div class="separator" />
         <div class="text-no-wrap">
-          <h1>MARCENARIA <span style="font-family: Arboria-Light">ARTESANAL</span></h1>
+          <h1>
+            MARCENARIA <span style="font-family: Arboria-Light">ARTESANAL</span>
+          </h1>
         </div>
-        <div class="separator"/>
+        <div class="separator" />
       </div>
-      <div
-        class="portfolioTabs"
-      >
+      <div class="portfolioTabs">
         <TabCards
           :tabs="portifolioTabs"
           @background="changeBackground"
@@ -115,31 +126,31 @@ export default {
       portifolioTabs: [
         {
           name: "cardSala",
-          title: "SALA",
+          title: "DESIGN",
           text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
           anchor: "#contact",
           card: false,
           background: `${new URL(
-            "@/assets/heroCards/background4.jpg",
+            "@/assets/heroCards/background4.jpeg",
             import.meta.url
           )}`,
           active: false,
         },
         {
           name: "cardQuarto",
-          title: "QUARTO",
+          title: "BELEZA",
           text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
           anchor: "#contact",
           card: false,
           background: `${new URL(
-            "@/assets/heroCards/background3.jpg",
+            "@/assets/heroCards/background3.jpeg",
             import.meta.url
           )}`,
           active: false,
         },
         {
           name: "cardCozinha",
-          title: "COZINHA",
+          title: "SENTIDO",
           text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
           anchor: "#contact",
           card: false,
@@ -151,7 +162,7 @@ export default {
         },
         {
           name: "cardEscritório",
-          title: "ESCRITÓRIO",
+          title: "HARMONIA",
           text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
           anchor: "#contact",
           card: false,
@@ -164,35 +175,30 @@ export default {
       ],
       drawer: null,
       menuMobile: [
-        {tab:'HISTÓRIA',
-         anchor: 'history'
-        },
-        {tab:'PROJETOS',
-         anchor: 'portifolio'
-        },
-        {tab:'CONTATO',
-         anchor: 'contact'
-        },
-        {tab:'HOME',
-         anchor: 'hero'
-        },
+        { tab: "HOME", anchor: "hero" },
+        { tab: "HISTÓRIA", anchor: "history" },
+        { tab: "CONTATO", anchor: "contact" },
+        { tab: "PROJETOS", anchor: "portifolio" },
       ],
-      heroBackground: `${new URL('../../../../assets/heroCards/background.jpg', import.meta.url)}`,
+      heroBackground: `${new URL(
+        "../../../../assets/heroCards/background.jpg",
+        import.meta.url
+      )}`,
       hovering: false,
       linkIcons: [
         {
-          ref:'https://pt-br.facebook.com/marcenariartesanal/',
-          icon: ['fab', 'fa-facebook-f']
+          ref: "https://pt-br.facebook.com/marcenariartesanal/",
+          icon: ["fab", "fa-facebook-f"],
         },
         {
-          ref:'https://www.instagram.com/marcenariaartesanal/?hl=en',
-          icon:['fab', 'fa-instagram']
+          ref: "https://www.instagram.com/marcenariaartesanal/?hl=en",
+          icon: ["fab", "fa-instagram"],
         },
         {
-          ref: 'https://wa.me/message/YRG5PWGMPL73G1',
-          icon: ['fab', 'fa-whatsapp']
+          ref: "https://wa.me/message/YRG5PWGMPL73G1",
+          icon: ["fab", "fa-whatsapp"],
         },
-      ]
+      ],
     };
   },
   mounted() {
@@ -210,22 +216,22 @@ export default {
       this.windowWidth = window.innerWidth;
     },
     scrollToDrawer(section) {
-      this.drawer = !this.drawer
+      this.drawer = !this.drawer;
       const element = document.getElementById(section);
       element.scrollIntoView({
         behavior: "smooth",
       });
     },
     scrollTo(section) {
-      this.drawer = !this.drawer
+      this.drawer = !this.drawer;
       const element = document.getElementById(section);
       element.scrollIntoView({
         behavior: "smooth",
       });
     },
-      changeBackground(background) {
-        this.heroBackground = background
-      }
+    changeBackground(background) {
+      this.heroBackground = background;
+    },
   },
 };
 </script>
@@ -234,7 +240,8 @@ export default {
 .hero-container {
   height: 100vh;
   width: 100vw;
-  background-image: url("../../../../assets/heroCards/background.jpg");
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("../../../../assets/images/contato-pic.jpeg") no-repeat fixed center;
   background-size: cover;
 }
 .hero-open-menu-icon-mobile {
@@ -410,19 +417,19 @@ export default {
 .containerIcons {
   display: flex;
   flex-flow: row nowrap;
-  justify-content: center;
-  padding-left: 20px;
+  justify-content: space-between;
+  width: 170px;
   margin: 0 auto;
   margin-top: 3em;
 }
 .footer-social-icons {
-  color: rgba(255, 255, 255, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  color: rgb(255, 255, 255);
+  border: 1px solid rgb(255, 255, 255);
   border-radius: 50%;
   padding: 8px 8px;
   height: 18px;
   width: 20px;
-  margin-right: 2em;
+  margin-right: 0;
 }
 .menuContainer {
   display: flex;
@@ -443,10 +450,10 @@ export default {
   background-color: rgba(255, 255, 255, 0.15);
 }
 .listContainer {
-  margin-top: 10em;
-  margin-left: 2em;
+  margin-top: calc(50vh - 219px);
   display: flex;
-  justify-content: start;
+  justify-content: center;
+  text-align: center;
   align-items: center;
 }
 .icons:hover {

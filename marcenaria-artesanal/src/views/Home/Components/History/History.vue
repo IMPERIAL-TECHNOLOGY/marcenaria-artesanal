@@ -245,7 +245,7 @@ export default {
 <style lang="css" scoped>
 .hist-container {
   width: 100%;
-  padding: 45px 5vw 30px 5vw;
+  padding: 80px 5vw 30px 5vw;
   margin: 0 auto;
 }
 .hist-bg-text {
