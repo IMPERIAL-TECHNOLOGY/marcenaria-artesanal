@@ -108,7 +108,7 @@ export default {
 
   data() {
     return {
-      logo: `${new URL("../../assets/images/logo.png", import.meta.url)}`,
+      logo: `${new URL("../../assets/images/logo.WebP", import.meta.url)}`,
     };
   },
   methods: {
