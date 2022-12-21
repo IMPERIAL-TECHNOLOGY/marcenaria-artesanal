@@ -77,7 +77,9 @@
       <div class="titleContent">
         <div class="separator" />
         <div class="text-no-wrap">
-          <h1>
+          <h1
+            :style="{ color: sloganColor }"
+          >
             MARCENARIA <span>ARTESANAL</span>
           </h1>
         </div>
@@ -87,6 +89,7 @@
         <TabCards
           :tabs="portifolioTabs"
           @background="changeBackground"
+          @slogan="changeSlogan"
           @hovering="hovering"
         />
       </div>
@@ -135,6 +138,7 @@ export default {
             import.meta.url
           )}`,
           active: false,
+          slogan: 'white'
         },
         {
           name: "cardQuarto",
@@ -147,6 +151,7 @@ export default {
             import.meta.url
           )}`,
           active: false,
+          slogan: 'black'
         },
         {
           name: "cardCozinha",
@@ -159,6 +164,7 @@ export default {
             import.meta.url
           )}`,
           active: false,
+          slogan: 'white'
         },
         {
           name: "cardEscritório",
@@ -171,6 +177,7 @@ export default {
             import.meta.url
           )}`,
           active: false,
+          slogan: 'white'
         },
       ],
       drawer: null,
@@ -199,6 +206,7 @@ export default {
           icon: ["fab", "fa-whatsapp"],
         },
       ],
+      sloganColor: 'white'
     };
   },
   mounted() {
@@ -232,6 +240,9 @@ export default {
     changeBackground(background) {
       this.heroBackground = background;
     },
+    changeSlogan(color) {
+      this.sloganColor = color
+    }
   },
 };
 </script>

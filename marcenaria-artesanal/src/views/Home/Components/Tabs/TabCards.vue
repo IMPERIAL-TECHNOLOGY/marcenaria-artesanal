@@ -21,7 +21,10 @@
             class="portfolioItemExpanded"
             @mouseover.once="setBackground(item)"
           >
-            <div class="cardContainer">
+            <div
+              class="cardContainer"
+              @mouseover.once="setSloganColor(item)"
+            >
               <div class="cardTitle">
                 <v-card-title>{{ item.title }} </v-card-title>
               </div>
@@ -67,6 +70,10 @@ export default {
     setBackground(item) {
       const background = item.background;
       this.$emit("background", background);
+    },
+    setSloganColor(item) {
+      const slogan = item.slogan;
+      this.$emit("slogan", slogan);
     },
     tabHover(item) {
       item.active = true;

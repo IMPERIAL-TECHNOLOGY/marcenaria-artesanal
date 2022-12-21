@@ -77,7 +77,7 @@
             :icon="['fab', 'fa-whatsapp']"
             class="footer-contact-icons"
           />
-          (15)1234-5678</a
+          (15)3357-9346</a
         >
         <a href="mailto: contato@marcenariaartesanal.com.br"
           ><font-awesome-icon
