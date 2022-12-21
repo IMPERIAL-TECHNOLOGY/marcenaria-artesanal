@@ -239,7 +239,6 @@ export default {
 <style lang="css" scoped>
 .hero-container {
   height: 100vh;
-  width: 100vw;
   background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
     url("../../../../assets/images/contato-pic.WebP") no-repeat fixed center;
   background-size: cover;
