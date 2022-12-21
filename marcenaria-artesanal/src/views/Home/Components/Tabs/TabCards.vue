@@ -104,7 +104,7 @@ export default {
 }
 .v-card--reveal {
   transition: 0.4s;
-  height: 30vh;
+  height: 100%;
   margin-top: 10em;
   padding: 0;
   bottom: 0;

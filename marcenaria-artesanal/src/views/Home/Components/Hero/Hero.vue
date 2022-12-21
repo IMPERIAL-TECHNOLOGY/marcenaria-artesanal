@@ -78,7 +78,7 @@
         <div class="separator" />
         <div class="text-no-wrap">
           <h1>
-            MARCENARIA <span style="font-family: Arboria-Light">ARTESANAL</span>
+            MARCENARIA <span>ARTESANAL</span>
           </h1>
         </div>
         <div class="separator" />
@@ -361,7 +361,7 @@ export default {
   flex-flow: column nowrap;
   justify-content: flex-end;
   align-items: center;
-  height: 33vh;
+  height: 40vh;
   max-width: 90em;
   margin: 0 auto;
 }
@@ -374,10 +374,12 @@ export default {
 .titleContent div > h1 {
   font-size: 1.8em;
   color: white;
+  transition: 0.4s;
   font-family: Arboria-Bold, sans-serif;
 }
 .titleContent div > h1 > span {
-  color: rgba(255, 255, 255, 0.47);
+  font-family: Arboria-Light, sans-serif;
+  opacity: 0.6;
   text-wrap: none;
 }
 .separator {
