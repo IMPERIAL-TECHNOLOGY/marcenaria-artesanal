@@ -147,11 +147,11 @@ export default {
           anchor: "#contact",
           card: false,
           background: `${new URL(
-            "@/assets/heroCards/background3.WebP",
+            "@/assets/heroCards/background.WebP",
             import.meta.url
           )}`,
           active: false,
-          slogan: 'black'
+          slogan: 'white'
         },
         {
           name: "cardCozinha",
@@ -173,11 +173,11 @@ export default {
           anchor: "#contact",
           card: false,
           background: `${new URL(
-            "@/assets/heroCards/background.WebP",
+            "@/assets/heroCards/background3.WebP",
             import.meta.url
           )}`,
           active: false,
-          slogan: 'white'
+          slogan: 'black'
         },
       ],
       drawer: null,
