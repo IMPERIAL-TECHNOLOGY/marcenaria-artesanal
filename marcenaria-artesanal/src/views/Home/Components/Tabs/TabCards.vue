@@ -4,6 +4,7 @@
     v-for="(item, i) in tabs"
     :key="i"
     style="background-color: transparent"
+    flat
   >
     <v-card-item
       class="portfolioItem"
@@ -107,7 +108,6 @@ export default {
   padding: 0;
   height: 100%;
   cursor: pointer;
-  border: 0.5px transparent;
 }
 .v-card--reveal {
   transition: 0.4s;
@@ -150,6 +150,7 @@ export default {
   text-align: center;
   font-size: 1.4em;
   font-family: Arboria-Light, sans-serif;
+
 }
 .cardContainer {
   display: flex;

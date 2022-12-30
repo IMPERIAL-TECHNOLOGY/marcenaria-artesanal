@@ -15,9 +15,7 @@
     >
       <h3>Quer saber mais sobre nós?</h3>
       <p class="contact-main-container-text">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum
-        dolor sit amet, consectetur adipiscing elit
-      </p>
+        Deixe seu projeto conosco e prepare-se para ser surpreendido!</p>
       <a href="https://wa.me/message/YRG5PWGMPL73G1"
         >ENTRE EM CONTATO PELO WHATSAPP</a
       >

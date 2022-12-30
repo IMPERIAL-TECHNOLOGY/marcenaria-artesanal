@@ -5,11 +5,11 @@
   >
     <v-card style="z-index: 400">
       <div class="hero-nav-container">
-        <font-awesome-icon
-          :icon="['fas', 'fa-bars']"
-          class="hero-open-menu-icon-mobile"
-          @click="drawer = !drawer"
-        />
+          <font-awesome-icon
+            :icon="['fas', 'fa-bars']"
+            class="hero-open-menu-icon-mobile"
+            @click="drawer = !drawer"
+          />
         <v-navigation-drawer
           location="right"
           v-model="drawer"
@@ -130,7 +130,7 @@ export default {
         {
           name: "cardSala",
           title: "DESIGN",
-          text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+          text: "Pensamos em todos os detalhes para trazer o melhor design dentro do seu ambiente.",
           anchor: "#contact",
           card: false,
           background: `${new URL(
@@ -143,20 +143,20 @@ export default {
         {
           name: "cardQuarto",
           title: "BELEZA",
-          text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+          text: "Produtos de alta qualidade que conjugam tecnologia de ponta e rigor artesanal.",
           anchor: "#contact",
           card: false,
           background: `${new URL(
-            "@/assets/heroCards/background3.WebP",
+            "@/assets/heroCards/background.WebP",
             import.meta.url
           )}`,
           active: false,
-          slogan: 'black'
+          slogan: 'white'
         },
         {
           name: "cardCozinha",
           title: "SENTIDO",
-          text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+          text: "Trazendo a elegância de sua essência para dentro projeto.",
           anchor: "#contact",
           card: false,
           background: `${new URL(
@@ -169,15 +169,15 @@ export default {
         {
           name: "cardEscritório",
           title: "HARMONIA",
-          text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+          text: "Sofisticação e conforto ao ambiente são nossas prioridades.",
           anchor: "#contact",
           card: false,
           background: `${new URL(
-            "@/assets/heroCards/background.WebP",
+            "@/assets/heroCards/background3.WebP",
             import.meta.url
           )}`,
           active: false,
-          slogan: 'white'
+          slogan: 'black'
         },
       ],
       drawer: null,
@@ -251,7 +251,7 @@ export default {
 .hero-container {
   height: 100vh;
   background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-    url("../../../../assets/images/contato-pic.WebP") no-repeat center;
+    url("../../../../assets/heroCards/background.WebP") no-repeat center;
   background-size: cover;
 }
 .hero-open-menu-icon-mobile {

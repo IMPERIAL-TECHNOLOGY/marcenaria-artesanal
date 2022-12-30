@@ -27,27 +27,12 @@
                     :alt="carouselItems[+index + i].description"
                     cover
                   />
-                  <h1
-                    style="
-                      height: 40px;
-                      font-size: 20px;
-                      margin-top: 20px;
-                      font-family: Arboria-Medium;
-                      color: rgba(0, 0, 0, 0.7);
-                      @media (min-width: 768px) {
-                        font-size: 32px;
-                        margin-top: 21px;
-                      }
-                    "
-                  >
-                    Lorem ipsum
-                  </h1>
                   <h4
                     style="
                       height: 15vh;
                       font-size: 15px;
                       font-family: Arboria-Light;
-                      margin-top: 12px;
+                      padding-top: 20px;
                       color: rgba(0, 0, 0, 0.6);
                       @media (min-width: 768px) {
                         font-size: 24px;
@@ -100,27 +85,12 @@
                     :alt="carouselItems[+index + i].description"
                     cover
                   />
-                  <h1
-                    style="
-                      height: 40px;
-                      font-size: 20px;
-                      margin-top: 20px;
-                      font-family: Arboria-Medium;
-                      color: rgba(0, 0, 0, 0.7);
-                      @media (min-width: 768px) {
-                        font-size: 32px;
-                        margin-top: 21px;
-                      }
-                    "
-                  >
-                    Lorem ipsum
-                  </h1>
                   <h4
                     style="
                       height: 15vh;
                       font-size: 15px;
                       font-family: Arboria-Light;
-                      margin-top: 12px;
+                      padding-top: 20px;
                       color: rgba(0, 0, 0, 0.6);
                       @media (min-width: 768px) {
                         font-size: 24px;
@@ -163,7 +133,7 @@ export default {
             import.meta.url
           )}`,
           description:
-            "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+            "Cozinha com estilo clássico, além de linda e charmosa, é atemporal. Sua solidez possibilita maior durabilidade, além de permitir um resultado final impecável no acabamento.",
         },
         {
           image: `${new URL(
@@ -171,7 +141,7 @@ export default {
             import.meta.url
           )}`,
           description:
-            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+            "Painel seguindo a tendência que está se mantendo na decoração de interiores. Ripado em madeira com lâminas naturais de Freijó.",
         },
         {
           image: `${new URL(
@@ -179,7 +149,7 @@ export default {
             import.meta.url
           )}`,
           description:
-            "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+            "Uma cozinha cheia de detalhes que vão tirar o fôlego. Mobiliários para seu ambiente ficar inesquecível.",
         },
         {
           image: `${new URL(
@@ -187,7 +157,7 @@ export default {
             import.meta.url
           )}`,
           description:
-            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+            "Estante projetada para compor dois ambientes, sendo hall de entrada e sala de estar com acabamento em lâmina natural de Freijó.",
         },
         {
           image: `${new URL(
@@ -195,31 +165,7 @@ export default {
             import.meta.url
           )}`,
           description:
-            "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-        },
-        {
-          image: `${new URL(
-            "@/assets/carousel/image6.png",
-            import.meta.url
-          )}`,
-          description:
-            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-        },
-        {
-          image: `${new URL(
-            "@/assets/carousel/image7.png",
-            import.meta.url
-          )}`,
-          description:
-            "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-        },
-        {
-          image: `${new URL(
-            "@/assets/carousel/image8.png",
-            import.meta.url
-          )}`,
-          description:
-            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+            "Um ambiente externo projetado em madeira Freijó.",
         },
         {
           image: `${new URL(
@@ -227,7 +173,7 @@ export default {
             import.meta.url
           )}`,
           description:
-            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+            "Closet Joia Bergamo",
         },
       ],
       dialog: false,
@@ -240,7 +186,7 @@ export default {
       if (this.$vuetify.display.xs) {
         return 1;
       }
-      if (this.$vuetify.display.smAndDown) {
+      if (this.$vuetify.display.mdAndDown) {
         return 2;
       }
 

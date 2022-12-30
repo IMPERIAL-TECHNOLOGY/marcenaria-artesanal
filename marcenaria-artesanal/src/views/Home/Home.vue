@@ -27,8 +27,7 @@
       <div class="titleCarousel">
         <h1 class="projects-title">PROJETOS</h1>
         <h4 class="projects-subtitle">
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry.
+          Conheça alguns de nossos projetos
         </h4>
         <a
           class="projects-instagram"

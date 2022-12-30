@@ -1,5 +1,5 @@
 <template>
-  <div class="hist-container" v-if="windowWidth >= 768">
+  <div class="hist-container" v-if="windowWidth >= 1264">
     <div
       class="hist-intro-container"
       v-motion
@@ -26,9 +26,7 @@
       </div>
 
       <p class="hist-text-intro">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis
-        molestie, dictum est a, mattis tellus. Sed dignissim, metus nec
-        fringilla accumsan.
+        Com uma equipe de profissionais altamente especializados e modernos equipamentos, a Marcenaria Artesanal é referência em qualidade e excelência. No parque fabril de 6500 m², está a sede própria da empresa, que conquistou um espaço importante no mercado mobiliário da região.
       </p>
     </div>
     <div
@@ -98,7 +96,7 @@
       </p>
     </div>
   </div>
-  <div class="hist-container" v-if="windowWidth < 768">
+  <div class="hist-container" v-else>
     <div
       class="hist-intro-container"
       v-motion
@@ -126,9 +124,7 @@
       </div>
 
       <p class="hist-text-intro">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis
-        molestie, dictum est a, mattis tellus. Sed dignissim, metus nec
-        fringilla accumsan.
+        Com uma equipe de profissionais altamente especializados e modernos equipamentos, a Marcenaria Artesanal é referência em qualidade e excelência. No parque fabril de 6500 m², está a sede própria da empresa, que conquistou um espaço importante no mercado mobiliário da região.
       </p>
     </div>
     <div
