@@ -2,7 +2,11 @@
   <section id="hero">
     <Hero />
   </section>
-  <section id="history">
+  <section
+    id="history"
+    style="background-color: #EFEFEF
+"
+  >
     <History />
   </section>
   <section id="contact">
@@ -45,17 +49,18 @@
       </div>
     </div>
   </section>
-  <FooterVue />
+  <FooterVue
+  />
 </template>
 
 <script>
 import TabsNavegation from "@/components/Tabs/TabsNavegation";
 import TabCards from "@/views/Home/Components/Tabs/TabCards";
 import HomeCarousel from "@/views/Home/Components/Carousel/HomeCarousel";
-import FooterVue from "@/components/Footer/FooterVue.vue";
 import History from "@/views/Home/Components/History/History";
 import Contact from "./Components/Contact/Contact.vue";
 import Hero from "@/views/Home/Components/Hero/Hero.vue";
+import FooterVue from "@/views/Home/Components/Footer/FooterVue";
 export default {
   name: "Home",
   components: {
@@ -74,6 +79,7 @@ export default {
 </script>
 <style scoped>
 .portifolioContainer {
+  background-color: #EFEFEF;
   box-sizing: border-box;
   display: flex;
   justify-content: center;

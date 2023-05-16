@@ -25,9 +25,25 @@
         </div>
       </div>
 
-      <p class="hist-text-intro">
-        Com uma equipe de profissionais altamente especializados e modernos equipamentos, a Marcenaria Artesanal é referência em qualidade e excelência. No parque fabril de 6500 m², está a sede própria da empresa, que conquistou um espaço importante no mercado mobiliário da região.
-      </p>
+        <v-carousel
+          :show-arrows="false"
+          class="hist-text-intro"
+        >
+          <v-carousel-item
+            style="display: flex; justify-content: center; align-items: center'"
+            v-for="(item,i) in slideHistory"
+            :key="i"
+            cover
+          >
+            <div
+              style="
+              font-family: Arboria-Light;
+              font-size: 30px;"
+            >
+              {{item.text}}
+            </div>
+          </v-carousel-item>
+        </v-carousel>
     </div>
     <div
       class="hist-design-container"
@@ -123,9 +139,28 @@
         </div>
       </div>
 
-      <p class="hist-text-intro">
-        Com uma equipe de profissionais altamente especializados e modernos equipamentos, a Marcenaria Artesanal é referência em qualidade e excelência. No parque fabril de 6500 m², está a sede própria da empresa, que conquistou um espaço importante no mercado mobiliário da região.
-      </p>
+      <v-carousel
+        :show-arrows="false"
+        class="hist-text-intro-mobile"
+        style="margin-bottom: 30px"
+      >
+        <v-carousel-item
+          style="display: flex; justify-content: center; align-items: center'"
+          v-for="(item,i) in slideHistory"
+          :key="i"
+          cover
+        >
+          <div
+            style="
+              font-family: Arboria-Light;
+              font-size: 25px;
+
+            "
+          >
+            {{item.text}}
+          </div>
+        </v-carousel-item>
+      </v-carousel>
     </div>
     <div
       class="hist-design-container"
@@ -218,6 +253,23 @@ export default {
         import.meta.url
       )}`,
       windowWidth: window.innerWidth,
+      slideHistory: [
+        {
+          text: 'A Marcenaria Artesanal  desenvolve ambientes únicos a partir de soluções inovadoras para a criação de móveis personalizados, de acordo com o estilo de cada cliente.'
+        },
+        {
+          text: 'Com uma das maiores e mais modernas instalações no segmento de móveis sob medida, desenvolvemos projetos em parceria com os mais renomados arquitetos, decoradores e designers de interiores do estado de São Paulo.'
+        },
+        {
+          text: 'Desde 1991 fabricamos móveis de alta qualidade, com matéria prima de procedência certificada, além do design arrojado e exclusivo, tendo como premissa a responsabilidade com o meio ambiente.'
+        },
+        {
+          text: 'Com uma equipe de profissionais especializados no segmento moveleiro e equipamentos com a mais alta tecnologia, a Marcenaria Artesanal é referência em qualidade excelência em serviços e produtos.'
+        },
+        {
+          text: 'Instalada em um parque fabril com 6.500 m² está a sede da empresa, que conquistou um espaço importante no mercado mobiliário do estado paulista.'
+        }
+      ]
     };
   },
   mounted() {
@@ -266,11 +318,12 @@ export default {
   margin: 0px 0 0px 10px;
 }
 .hist-text-intro {
-  font-family: Arboria-Light;
-  font-size: 20px;
-  margin: 40px 0 30px 0;
-  padding-bottom: 30px;
-  border-bottom: 0.5px solid rgba(0, 0, 0, 0.2);
+  max-width: 485px;
+  max-height: 385px;
+}
+.hist-text-intro-mobile {
+  max-width: 485px;
+  max-height: 385px;
 }
 img {
   width: 90vw;

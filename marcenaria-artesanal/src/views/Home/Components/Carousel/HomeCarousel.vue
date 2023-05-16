@@ -2,9 +2,8 @@
   <v-carousel
     v-if="$vuetify.display.xs || $vuetify.display.sm || $vuetify.display.md"
     dark
-    height="100%"
+    height="90%"
     cycle
-    hide-delimiters
     hide-delimiter-background
     :show-arrows="false"
   >
@@ -18,6 +17,7 @@
             <template @click="openDialog(item)" v-if="+index + i < carouselItems.length">
               <v-col :key="i">
                 <v-sheet
+                  style="background-color: #EFEFEF"
                   v-if="+index + i < carouselItems.length"
                   class="carouselItem"
                 >
@@ -60,7 +60,7 @@
   <v-carousel
     v-else
     dark
-    height="100%"
+    height="90%"
     cycle
     hide-delimiters
     hide-delimiter-background
@@ -68,14 +68,16 @@
   >
     <template v-for="(item, index) in carouselItems">
       <v-carousel-item
+        style="background-color: #EFEFEF"
         v-if="(index + 1) % columns === 1 || columns === 1"
         :key="index"
       >
         <v-row class="flex-nowrap" style="height: 100%; margin: 0 -22px">
           <template v-for="(n, i) in columns">
-            <template @click="openDialog(item)" v-if="+index + i < carouselItems.length">
+            <template  @click="openDialog(item)" v-if="+index + i < carouselItems.length">
               <v-col :key="i">
                 <v-sheet
+                  style="background-color: #EFEFEF"
                   v-if="+index + i < carouselItems.length"
                   class="carouselItem"
                 >
@@ -119,7 +121,6 @@
 </template>
 <script>
 import ImageModal from "@/views/Home/Components/Carousel/ImageModal";
-import {loadFonts} from "@/plugins/webfontloader";
 export default {
   name: "Home",
   components: {ImageModal},
@@ -131,49 +132,37 @@ export default {
           image: `${new URL(
             "@/assets/carousel/image1.png",
             import.meta.url
-          )}`,
-          description:
-            "Cozinha com estilo clássico, além de linda e charmosa, é atemporal. Sua solidez possibilita maior durabilidade, além de permitir um resultado final impecável no acabamento.",
+          )}`
         },
         {
           image: `${new URL(
             "@/assets/carousel/image2.png",
             import.meta.url
-          )}`,
-          description:
-            "Painel seguindo a tendência que está se mantendo na decoração de interiores. Ripado em madeira com lâminas naturais de Freijó.",
+          )}`
         },
         {
           image: `${new URL(
             "@/assets/carousel/image3.png",
             import.meta.url
-          )}`,
-          description:
-            "Uma cozinha cheia de detalhes que vão tirar o fôlego. Mobiliários para seu ambiente ficar inesquecível.",
+          )}`
         },
         {
           image: `${new URL(
             "@/assets/carousel/image4.png",
             import.meta.url
-          )}`,
-          description:
-            "Estante projetada para compor dois ambientes, sendo hall de entrada e sala de estar com acabamento em lâmina natural de Freijó.",
+          )}`
         },
         {
           image: `${new URL(
             "@/assets/carousel/image5.png",
             import.meta.url
-          )}`,
-          description:
-            "Um ambiente externo projetado em madeira Freijó.",
+          )}`
         },
         {
           image: `${new URL(
             "@/assets/carousel/image9.png",
             import.meta.url
-          )}`,
-          description:
-            "Closet Joia Bergamo",
+          )}`
         },
       ],
       dialog: false,
@@ -216,6 +205,6 @@ export default {
 .carouselItem {
   margin-right: 10px;
   margin-left: 10px;
-  height: 40vh;
+  height: 65vh;
 }
 </style>
