@@ -4,7 +4,6 @@
     dark
     height="90%"
     cycle
-    hide-delimiters
     hide-delimiter-background
     :show-arrows="false"
   >
@@ -18,6 +17,7 @@
             <template @click="openDialog(item)" v-if="+index + i < carouselItems.length">
               <v-col :key="i">
                 <v-sheet
+                  style="background-color: #EFEFEF"
                   v-if="+index + i < carouselItems.length"
                   class="carouselItem"
                 >
@@ -68,14 +68,16 @@
   >
     <template v-for="(item, index) in carouselItems">
       <v-carousel-item
+        style="background-color: #EFEFEF"
         v-if="(index + 1) % columns === 1 || columns === 1"
         :key="index"
       >
         <v-row class="flex-nowrap" style="height: 100%; margin: 0 -22px">
           <template v-for="(n, i) in columns">
-            <template @click="openDialog(item)" v-if="+index + i < carouselItems.length">
+            <template  @click="openDialog(item)" v-if="+index + i < carouselItems.length">
               <v-col :key="i">
                 <v-sheet
+                  style="background-color: #EFEFEF"
                   v-if="+index + i < carouselItems.length"
                   class="carouselItem"
                 >
