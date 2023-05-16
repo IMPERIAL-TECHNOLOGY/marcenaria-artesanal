@@ -166,19 +166,6 @@ export default {
           active: false,
           slogan: 'white'
         },
-        {
-          name: "cardEscritório",
-          title: "HARMONIA",
-          text: "Sofisticação e conforto ao ambiente são nossas prioridades.",
-          anchor: "#contact",
-          card: false,
-          background: `${new URL(
-            "@/assets/heroCards/background3.WebP",
-            import.meta.url
-          )}`,
-          active: false,
-          slogan: 'black'
-        },
       ],
       drawer: null,
       menuMobile: [

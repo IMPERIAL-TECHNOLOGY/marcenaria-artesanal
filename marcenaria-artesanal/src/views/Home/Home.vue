@@ -2,7 +2,10 @@
   <section id="hero">
     <Hero />
   </section>
-  <section id="history">
+  <section
+    id="history"
+    style="background-color: #a7acb8"
+  >
     <History />
   </section>
   <section id="contact">
