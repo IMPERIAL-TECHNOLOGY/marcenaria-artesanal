@@ -4,8 +4,9 @@
     dark
     height="90%"
     cycle
-    hide-delimiter-background
     :show-arrows="false"
+    hide-delimiters
+    hide-delimiter-background
   >
     <template v-for="(item, index) in carouselItems">
       <v-carousel-item
@@ -59,7 +60,6 @@
   </v-carousel>
   <v-carousel
     v-else
-    dark
     height="90%"
     cycle
     hide-delimiters
@@ -164,6 +164,42 @@ export default {
             import.meta.url
           )}`
         },
+        {
+          image: `${new URL(
+            "@/assets/carousel/image6.png",
+            import.meta.url
+          )}`
+        },
+        {
+          image: `${new URL(
+            "@/assets/carousel/image7.png",
+            import.meta.url
+          )}`
+        },
+        {
+          image: `${new URL(
+            "@/assets/carousel/image8.png",
+            import.meta.url
+          )}`
+        },
+        {
+          image: `${new URL(
+            "@/assets/carousel/image10.png",
+            import.meta.url
+          )}`
+        },
+        {
+          image: `${new URL(
+            "@/assets/carousel/image11.png",
+            import.meta.url
+          )}`
+        },
+        {
+          image: `${new URL(
+            "@/assets/carousel/image12.png",
+            import.meta.url
+          )}`
+        },
       ],
       dialog: false,
       imgModal: '',
@@ -205,6 +241,6 @@ export default {
 .carouselItem {
   margin-right: 10px;
   margin-left: 10px;
-  height: 65vh;
+  height: 60vh;
 }
 </style>
