@@ -27,10 +27,12 @@
 
         <v-carousel
           :show-arrows="false"
+          cycle
+          show-arrows="hover"
           class="hist-text-intro"
+          hide-delimiter-background
         >
           <v-carousel-item
-            style="display: flex; justify-content: center; align-items: center'"
             v-for="(item,i) in slideHistory"
             :key="i"
             cover
@@ -142,10 +144,10 @@
       <v-carousel
         :show-arrows="false"
         class="hist-text-intro-mobile"
-        style="margin-bottom: 30px"
+        hide-delimiter-background
       >
         <v-carousel-item
-          style="display: flex; justify-content: center; align-items: center'"
+          style="display: flex; justify-content: center; align-items: center;"
           v-for="(item,i) in slideHistory"
           :key="i"
           cover
@@ -154,7 +156,7 @@
             style="
               font-family: Arboria-Light;
               font-size: 25px;
-
+              height: 65vh;
             "
           >
             {{item.text}}
@@ -322,6 +324,8 @@ export default {
   max-height: 385px;
 }
 .hist-text-intro-mobile {
+  margin-top: 70px;
+  margin-bottom: 30px;
   max-width: 485px;
   max-height: 385px;
 }
@@ -456,6 +460,9 @@ h3 {
   }
   .hist-bg-text-projetos {
     margin-left: 50px;
+  }
+  .v-btn--variant-text {
+    background-color: white;
   }
 }
 </style>
