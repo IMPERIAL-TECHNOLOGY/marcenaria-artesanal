@@ -92,12 +92,12 @@ export default {
   padding: 0.5em;
   margin: 0 auto;
   height: 100%;
-  background-color: #341818;
+  background-color: #111010;
   cursor: pointer;
   border: 0.5px transparent;
 }
 .cardFooter {
-  background-color: #341818;
+  background-color: #111010;
   height: 0.7em;
   margin-top: 16vh;
 }
@@ -127,7 +127,7 @@ export default {
   color: white;
 }
 .cardTitle {
-  background-color: #341818;
+  background-color: #111010;
   font-size: 0.6em;
   text-align: center;
   height: 3.5vh !important;
