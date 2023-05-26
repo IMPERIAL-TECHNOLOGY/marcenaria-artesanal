@@ -69,7 +69,7 @@ export default {
 .contact-container {
 }
 .contact-main-container {
-  background-color: #341818;
+  background-color: #111010;
   color: white;
   padding: 45px;
   text-align: center;

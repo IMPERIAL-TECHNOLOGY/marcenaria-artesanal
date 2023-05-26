@@ -1,5 +1,14 @@
 <template>
   <div class="hist-container" v-if="windowWidth >= 1264">
+      <div class="title-container">
+        <div class="hist-bg-text history-title-desktop">
+          <h1>32</h1>
+          <span>anos</span>
+          <div style="margin-right: 20px"/>
+          <h1>+10k</h1>
+          <span>projetos</span>
+        </div>
+      </div>
     <div
       class="hist-intro-container"
       v-motion
@@ -14,15 +23,14 @@
       }"
       :delay="100"
     >
-      <div class="hist-bg-texts">
-        <div class="hist-bg-text hist-bg-text-anos">
-          <h1>32</h1>
-          <span>anos</span>
-        </div>
-        <div class="hist-bg-text hist-bg-text-projetos">
-          <h1>+10k</h1>
-          <span>projetos</span>
-        </div>
+      <div class="video-container-desktop">
+        <iframe
+          width="100%"
+          height="100%"
+          src="https://www.youtube.com/embed/shopq-fKYwE"
+          title="YouTube video player"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen></iframe>
       </div>
 
         <v-carousel
@@ -130,8 +138,8 @@
       }"
       :delay="400"
     >
-      <div class="hist-bg-texts">
-        <div class="hist-bg-text hist-bg-text-anos">
+      <div class="hist-bg-texts-mobile">
+        <div class="hist-bg-text">
           <h1>32</h1>
           <span>anos</span>
         </div>
@@ -140,7 +148,15 @@
           <span>projetos</span>
         </div>
       </div>
-
+      <div class="video-container-mobile">
+        <iframe
+          width="100%"
+          height="220px"
+          src="https://www.youtube.com/embed/shopq-fKYwE"
+          title="YouTube video player"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen></iframe>
+      </div>
       <v-carousel
         :show-arrows="false"
         class="hist-text-intro-mobile"
@@ -271,7 +287,11 @@ export default {
         {
           text: 'Instalada em um parque fabril com 6.500 m² está a sede da empresa, que conquistou um espaço importante no mercado mobiliário do estado paulista.'
         }
-      ]
+      ],
+      videoUrl: `${new URL(
+        "https://youtu.be/shopq-fKYwE",
+        import.meta.url
+      )}`,
     };
   },
   mounted() {
@@ -301,11 +321,19 @@ export default {
 .hist-bg-text {
   display: flex;
   height: 50px;
-  flex-wrap: no;
   justify-content: center;
   align-items: center;
   margin-bottom: 30px;
 }
+
+.history-title-desktop {
+  display: flex;
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 90px;
+}
+
 .hist-bg-text h1 {
   font-family: Arboria-Thin;
   font-size: 60px;
@@ -324,8 +352,8 @@ export default {
   max-height: 385px;
 }
 .hist-text-intro-mobile {
-  margin-top: 70px;
-  margin-bottom: 30px;
+  margin-top: 20px;
+  margin-bottom: 40px;
   max-width: 485px;
   max-height: 385px;
 }
@@ -445,7 +473,12 @@ h3 {
     margin-top: 10px;
   }
 }
-
+.hist-bg-texts-mobile {
+  margin-top: -50px;
+}
+.video-container-mobile {
+  margin: 50px 0 50px 0;
+}
 @media (min-width: 1200px) {
   .hist-intro-container {
     border: none;
@@ -463,6 +496,10 @@ h3 {
   }
   .v-btn--variant-text {
     background-color: white;
+  }
+  .video-container-desktop {
+    height: 370px;
+    width: 500px;
   }
 }
 </style>
