@@ -436,6 +436,7 @@ h3 {
     justify-self: start;
     width: 85%;
   }
+
   .hist-beleza-container h3 {
     font-size: 24px;
     align-self: end;
