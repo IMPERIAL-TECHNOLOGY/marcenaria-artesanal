@@ -43,7 +43,7 @@
                   class="cardButton"
                   :to="{ name: item.path, hash: item.anchor }"
                 >
-                  <span style="color: white">SAIBA MAIS</span>
+                  <span style="color: white">SAIBA MAIS </span>
                 </v-btn>
               </div>
             </div>
