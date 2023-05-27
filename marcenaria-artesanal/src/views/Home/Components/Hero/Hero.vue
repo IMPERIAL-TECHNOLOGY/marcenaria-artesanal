@@ -56,45 +56,50 @@
     </v-card>
     <img :src="logo" class="hero-logo-mobile" />
   </div>
-  <div
-    v-else
-    class="headerContainer"
-    :style="{ backgroundImage: `url(${heroBackground})` }"
-  >
-    <div>
-      <nav class="navContainer">
-        <v-img
-          :src="logo"
-          alt="Marcenaria artesanal logo"
-          class="logo"
-          max-width="200px"
-          min-width="150px"
-        />
-        <TabsNavegation :tabs="tabs" class="tabStyle" />
-      </nav>
-    </div>
-    <div class="titleContainer">
-      <div class="titleContent">
-        <div class="separator" />
-        <div class="text-no-wrap">
-          <h1
-            :style="{ color: sloganColor }"
-          >
-            MARCENARIA <span>ARTESANAL</span>
-          </h1>
-        </div>
-        <div class="separator" />
-      </div>
-      <div class="portfolioTabs">
-        <TabCards
-          :tabs="portifolioTabs"
-          @background="changeBackground"
-          @slogan="changeSlogan"
-          @hovering="hovering"
-        />
-      </div>
-    </div>
-  </div>
+   <div
+     v-else
+     class="headerContainer"
+     :style="{ backgroundImage: `url(${heroBackground})` }"
+ >
+   <div>
+     <nav class="navContainer">
+       <v-img
+         :src="logo"
+         alt="Marcenaria artesanal logo"
+         class="logo"
+         max-width="200px"
+         min-width="150px"
+       />
+       <TabsNavegation :tabs="tabs" class="tabStyle" />
+     </nav>
+   </div>
+   <div class="titleContainer">
+     <div class="titleContent">
+       <div
+         class="separator"
+         :style="{ borderBottom: `2px groove ${sloganColor}`  }"
+       />
+       <div class="text-no-wrap">
+         <h1
+           :style="{ color: sloganColor }"
+         >
+           MARCENARIA <span>ARTESANAL</span>
+         </h1>
+       </div>
+       <div
+         class="separator"
+         :style="{ borderBottom: `2px groove ${sloganColor}`  }"
+       />
+     </div>
+     <div class="portfolioTabs">
+       <TabCards
+         :tabs="portifolioTabs"
+         @background="changeBackground"
+         @slogan="changeSlogan"
+         @hovering="hovering"
+       />
+     </div>
+   </div></div>
 </template>
 
 <script>
@@ -237,8 +242,7 @@ export default {
 <style lang="css" scoped>
 .hero-container {
   height: 100vh;
-  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-    url("../../../../assets/heroCards/background.WebP") no-repeat center;
+  background: url("../../../../assets/heroCards/background.WebP") no-repeat center;
   background-size: cover;
 }
 .hero-open-menu-icon-mobile {
@@ -463,5 +467,9 @@ export default {
   transition: 0.7s;
   padding: 0;
   background-color: rgba(255, 255, 255, 0.15);
+}
+.background-filter {
+  background-color: black;
+  z-index: 999 !important;
 }
 </style>
