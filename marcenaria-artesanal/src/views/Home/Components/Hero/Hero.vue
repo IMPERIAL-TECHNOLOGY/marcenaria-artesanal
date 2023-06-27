@@ -5,16 +5,16 @@
   >
     <v-card style="z-index: 400">
       <div class="hero-nav-container">
-          <font-awesome-icon
-            :icon="['fas', 'fa-bars']"
-            class="hero-open-menu-icon-mobile"
-            @click="drawer = !drawer"
-          />
+        <font-awesome-icon
+          :icon="['fas', 'fa-bars']"
+          class="hero-open-menu-icon-mobile"
+          @click="drawer = !drawer"
+        />
         <v-navigation-drawer
           location="right"
           v-model="drawer"
           width="250"
-          style="z-index: 100; background-color: #341818"
+          style="z-index: 100; background-color: rgba(17, 16, 16, 0.95)"
           class="hero-mobile-menu"
         >
           <font-awesome-icon
@@ -56,50 +56,49 @@
     </v-card>
     <img :src="logo" class="hero-logo-mobile" />
   </div>
-   <div
-     v-else
-     class="headerContainer"
-     :style="{ backgroundImage: `url(${heroBackground})` }"
- >
-   <div>
-     <nav class="navContainer">
-       <v-img
-         :src="logo"
-         alt="Marcenaria artesanal logo"
-         class="logo"
-         max-width="200px"
-         min-width="150px"
-       />
-       <TabsNavegation :tabs="tabs" class="tabStyle" />
-     </nav>
-   </div>
-   <div class="titleContainer">
-     <div class="titleContent">
-       <div
-         class="separator"
-         :style="{ borderBottom: `2px groove ${sloganColor}`  }"
-       />
-       <div class="text-no-wrap">
-         <h1
-           :style="{ color: sloganColor }"
-         >
-           MARCENARIA <span>ARTESANAL</span>
-         </h1>
-       </div>
-       <div
-         class="separator"
-         :style="{ borderBottom: `2px groove ${sloganColor}`  }"
-       />
-     </div>
-     <div class="portfolioTabs">
-       <TabCards
-         :tabs="portifolioTabs"
-         @background="changeBackground"
-         @slogan="changeSlogan"
-         @hovering="hovering"
-       />
-     </div>
-   </div></div>
+  <div
+    v-else
+    class="headerContainer"
+    :style="{ backgroundImage: `url(${heroBackground})` }"
+  >
+    <div>
+      <nav class="navContainer">
+        <v-img
+          :src="logo"
+          alt="Marcenaria artesanal logo"
+          class="logo"
+          max-width="200px"
+          min-width="150px"
+        />
+        <TabsNavegation :tabs="tabs" class="tabStyle" />
+      </nav>
+    </div>
+    <div class="titleContainer">
+      <div class="titleContent">
+        <div
+          class="separator"
+          :style="{ borderBottom: `2px groove ${sloganColor}` }"
+        />
+        <div class="text-no-wrap">
+          <h1 :style="{ color: sloganColor }">
+            MARCENARIA <span>ARTESANAL</span>
+          </h1>
+        </div>
+        <div
+          class="separator"
+          :style="{ borderBottom: `2px groove ${sloganColor}` }"
+        />
+      </div>
+      <div class="portfolioTabs">
+        <TabCards
+          :tabs="portifolioTabs"
+          @background="changeBackground"
+          @slogan="changeSlogan"
+          @hovering="hovering"
+        />
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -143,7 +142,7 @@ export default {
             import.meta.url
           )}`,
           active: false,
-          slogan: 'white'
+          slogan: "white",
         },
         {
           name: "cardQuarto",
@@ -156,7 +155,7 @@ export default {
             import.meta.url
           )}`,
           active: false,
-          slogan: 'white'
+          slogan: "white",
         },
         {
           name: "cardCozinha",
@@ -169,7 +168,7 @@ export default {
             import.meta.url
           )}`,
           active: false,
-          slogan: 'white'
+          slogan: "white",
         },
       ],
       drawer: null,
@@ -198,7 +197,7 @@ export default {
           icon: ["fab", "fa-whatsapp"],
         },
       ],
-      sloganColor: 'white'
+      sloganColor: "white",
     };
   },
   mounted() {
@@ -233,8 +232,8 @@ export default {
       this.heroBackground = background;
     },
     changeSlogan(color) {
-      this.sloganColor = color
-    }
+      this.sloganColor = color;
+    },
   },
 };
 </script>
@@ -242,7 +241,8 @@ export default {
 <style lang="css" scoped>
 .hero-container {
   height: 100vh;
-  background: url("../../../../assets/heroCards/background.WebP") no-repeat center;
+  background: url("../../../../assets/heroCards/background.WebP") no-repeat
+    center;
   background-size: cover;
 }
 .hero-open-menu-icon-mobile {

@@ -22,19 +22,12 @@
             class="portfolioItemExpanded"
             @mouseover.once="setBackground(item)"
           >
-            <div
-              class="cardContainer"
-              @mouseover.once="setSloganColor(item)"
-            >
+            <div class="cardContainer" @mouseover.once="setSloganColor(item)">
               <div class="cardTitle">
                 <v-card-title>{{ item.title }} </v-card-title>
               </div>
-              <div
-                class="cardText"
-              >
-                <v-card-text
-                  style="font-family: Arboria-Light, sans-serif"
-                >
+              <div class="cardText">
+                <v-card-text style="font-family: Arboria-Light, sans-serif">
                   {{ item.text }}
                 </v-card-text>
               </div>
@@ -93,11 +86,13 @@ export default {
   margin: 0 auto;
   height: 100%;
   background-color: #111010;
+  opacity: 0.9;
   cursor: pointer;
   border: 0.5px transparent;
 }
 .cardFooter {
   background-color: #111010;
+  opacity: 0.9;
   height: 0.7em;
   margin-top: 16vh;
 }
@@ -150,7 +145,6 @@ export default {
   text-align: center;
   font-size: 1.4em;
   font-family: Arboria-Light, sans-serif;
-
 }
 .cardContainer {
   display: flex;

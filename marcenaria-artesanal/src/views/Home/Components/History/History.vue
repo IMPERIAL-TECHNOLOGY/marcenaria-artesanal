@@ -1,14 +1,14 @@
 <template>
-  <div class="hist-container" v-if="windowWidth >= 1264">
-      <div class="title-container">
-        <div class="hist-bg-text history-title-desktop">
-          <h1>32</h1>
-          <span>anos</span>
-          <div style="margin-right: 20px"/>
-          <h1>+10k</h1>
-          <span>projetos</span>
-        </div>
+  <div class="hist-container" v-if="windowWidth >= 1200">
+    <div class="title-container">
+      <div class="hist-bg-text history-title-desktop">
+        <h1>32</h1>
+        <span>anos</span>
+        <div style="margin-right: 20px" />
+        <h1>+10k</h1>
+        <span>projetos</span>
       </div>
+    </div>
     <div
       class="hist-intro-container"
       v-motion
@@ -30,30 +30,23 @@
           src="https://www.youtube.com/embed/shopq-fKYwE"
           title="YouTube video player"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen></iframe>
+          allowfullscreen
+        ></iframe>
       </div>
 
-        <v-carousel
-          :show-arrows="false"
-          cycle
-          show-arrows="hover"
-          class="hist-text-intro"
-          hide-delimiter-background
-        >
-          <v-carousel-item
-            v-for="(item,i) in slideHistory"
-            :key="i"
-            cover
-          >
-            <div
-              style="
-              font-family: Arboria-Light;
-              font-size: 30px;"
-            >
-              {{item.text}}
-            </div>
-          </v-carousel-item>
-        </v-carousel>
+      <v-carousel
+        :show-arrows="false"
+        cycle
+        show-arrows="hover"
+        class="hist-text-intro"
+        hide-delimiter-background
+      >
+        <v-carousel-item v-for="(item, i) in slideHistory" :key="i" cover>
+          <div style="font-family: Arboria-Light; font-size: 30px">
+            {{ item.text }}
+          </div>
+        </v-carousel-item>
+      </v-carousel>
     </div>
     <div
       class="hist-design-container"
@@ -155,7 +148,8 @@
           src="https://www.youtube.com/embed/shopq-fKYwE"
           title="YouTube video player"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen></iframe>
+          allowfullscreen
+        ></iframe>
       </div>
       <v-carousel
         :show-arrows="false"
@@ -163,19 +157,20 @@
         hide-delimiter-background
       >
         <v-carousel-item
-          style="display: flex; justify-content: center; align-items: center;"
-          v-for="(item,i) in slideHistory"
+          style="
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+          "
+          v-for="(item, i) in slideHistory"
           :key="i"
           cover
         >
           <div
-            style="
-              font-family: Arboria-Light;
-              font-size: 25px;
-              height: 65vh;
-            "
+            style="font-family: Arboria-Light; font-size: 25px; height: 55vh"
           >
-            {{item.text}}
+            {{ item.text }}
           </div>
         </v-carousel-item>
       </v-carousel>
@@ -273,25 +268,22 @@ export default {
       windowWidth: window.innerWidth,
       slideHistory: [
         {
-          text: 'A Marcenaria Artesanal  desenvolve ambientes únicos a partir de soluções inovadoras para a criação de móveis personalizados, de acordo com o estilo de cada cliente.'
+          text: "A Marcenaria Artesanal  desenvolve ambientes únicos a partir de soluções inovadoras para a criação de móveis personalizados, de acordo com o estilo de cada cliente.",
         },
         {
-          text: 'Com uma das maiores e mais modernas instalações no segmento de móveis sob medida, desenvolvemos projetos em parceria com os mais renomados arquitetos, decoradores e designers de interiores do estado de São Paulo.'
+          text: "Com uma das maiores e mais modernas instalações no segmento de móveis sob medida, desenvolvemos projetos em parceria com os mais renomados arquitetos, decoradores e designers de interiores do estado de São Paulo.",
         },
         {
-          text: 'Desde 1991 fabricamos móveis de alta qualidade, com matéria prima de procedência certificada, além do design arrojado e exclusivo, tendo como premissa a responsabilidade com o meio ambiente.'
+          text: "Desde 1991 fabricamos móveis de alta qualidade, com matéria prima de procedência certificada, além do design arrojado e exclusivo, tendo como premissa a responsabilidade com o meio ambiente.",
         },
         {
-          text: 'Com uma equipe de profissionais especializados no segmento moveleiro e equipamentos com a mais alta tecnologia, a Marcenaria Artesanal é referência em qualidade excelência em serviços e produtos.'
+          text: "Com uma equipe de profissionais especializados no segmento moveleiro e equipamentos com a mais alta tecnologia, a Marcenaria Artesanal é referência em qualidade excelência em serviços e produtos.",
         },
         {
-          text: 'Instalada em um parque fabril com 6.500 m² está a sede da empresa, que conquistou um espaço importante no mercado mobiliário do estado paulista.'
-        }
+          text: "Instalada em um parque fabril com 6.500 m² está a sede da empresa, que conquistou um espaço importante no mercado mobiliário do estado paulista.",
+        },
       ],
-      videoUrl: `${new URL(
-        "https://youtu.be/shopq-fKYwE",
-        import.meta.url
-      )}`,
+      videoUrl: `${new URL("https://youtu.be/shopq-fKYwE", import.meta.url)}`,
     };
   },
   mounted() {
@@ -352,8 +344,9 @@ export default {
   max-height: 385px;
 }
 .hist-text-intro-mobile {
-  margin-top: 20px;
-  margin-bottom: 40px;
+  margin: 20px auto 40px auto;
+  /* margin-top: 20px;
+  margin-bottom: 40px; */
   max-width: 485px;
   max-height: 385px;
 }
@@ -372,7 +365,9 @@ h3 {
   font-size: 18px;
   margin: 20px 0 40px 0;
 }
-
+.video-container-mobile {
+  margin: 50px 0 50px 0;
+}
 @media (min-width: 768px) {
   .hist-container {
     max-width: 1400px;
@@ -383,7 +378,7 @@ h3 {
   }
   .hist-intro-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     margin: 50px 0 50px 0;
     border-bottom: 0.5px solid rgba(0, 0, 0, 0.2);
   }
@@ -403,7 +398,7 @@ h3 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 3fr 7fr;
-    margin-bottom: 100px;
+    margin-bottom: 0px;
   }
   .hist-design-container img {
     grid-column: 2;
@@ -428,7 +423,7 @@ h3 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 3fr 7fr;
-    margin-bottom: 100px;
+    margin-bottom: 0px;
   }
   .hist-beleza-container img {
     grid-column: 1;
@@ -473,15 +468,21 @@ h3 {
     align-self: start;
     margin-top: 10px;
   }
+  .video-container-mobile {
+    margin: 20px auto 20px auto;
+    width: 80%;
+  }
 }
 .hist-bg-texts-mobile {
   margin-top: -50px;
 }
-.video-container-mobile {
-  margin: 50px 0 50px 0;
-}
+
 @media (min-width: 1200px) {
   .hist-intro-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 50px 0 50px 0;
+    border-bottom: 0.5px solid rgba(0, 0, 0, 0.2);
     border: none;
   }
   .hist-text-intro {
@@ -501,6 +502,12 @@ h3 {
   .video-container-desktop {
     height: 370px;
     width: 500px;
+  }
+  .hist-design-container {
+    margin-bottom: 100px;
+  }
+  .hist-beleza-container {
+    margin-bottom: 100px;
   }
 }
 </style>
